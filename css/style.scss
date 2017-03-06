@@ -1,0 +1,86 @@
+@import 'partials/normalize';
+@import 'partials/variables';
+@import 'partials/initialPage';
+@import 'partials/mediaFirstResults';
+@import 'partials/results';
+
+
+html {
+	font-size: 62.5%;
+	height:100%;
+}
+body {
+	color: $blackish;
+	background: $white;
+	font-size: 1.2rem;
+	font-family: $rounded;
+	height:100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+}
+h1 {
+	font-size: 6rem;
+}
+
+h2 {
+	font-size: 5rem;
+}
+
+h3 {
+	font-size: 4rem;
+}
+
+h4 {
+	font-size: 3rem;
+}
+
+h5, h6 {
+	font-size: 2.8rem;
+}
+
+
+footer {
+	// position: relative;
+	// bottom:0;
+	// left:0;
+	// right:0;
+	padding:20px 10px;
+	background: transparentize($accentBlue, 0.5);
+	p {
+		margin:0;
+	}
+	span.curly {
+		font-family: $cursive;
+		letter-spacing: 1.3px;
+		@include bp('sml') {
+			display: block;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: $deepBlue;
+		transition: all 0.3s ease-out;
+	}
+	a:hover {
+		color:$surpriseOrange;
+	}
+}
+
+//Make Footer Sticky to bottom
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: -70px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+  height: 70px; 
+}
+
+
+

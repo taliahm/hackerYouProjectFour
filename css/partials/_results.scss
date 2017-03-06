@@ -1,0 +1,251 @@
+//Layout primarily with PACKERY plugin
+.wrapperResults {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.grid {
+	max-width: 100%;
+}
+
+div.grid-item {
+	background: white;
+	box-shadow: 1px 1px 3px $darkGrey;
+}
+
+//For Booze results
+div.grid-sizerOne {
+	width: 25%;
+	height: auto;	
+	@include bp('lrg') {
+		width:48%;
+	}
+}
+
+//For Movie/TV results
+div.gridsizerTwo {
+	// width: 100%;
+	height: auto;
+}
+
+div.grid-item img {
+	max-width: 100%;
+	display: block;
+}
+
+.topBar {
+	display: flex;
+	padding: 10px 10px;
+	@include bp('med') {
+		flex-direction:column;
+	}
+}
+
+.topBar .reset {
+	flex-shrink:0;
+}
+
+.topBar .reload {
+	@include buttonStyle($white, $accentGreen);
+	border-radius: 10px;
+	padding:10px;
+	font-size: 1.5rem;
+	letter-spacing: 1.4px;
+	a {
+		color:white;
+		text-decoration: none;
+	}
+	&:hover {
+		background: darken($accentGreen, 5);
+	}
+}
+
+.topBar .userMedia {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	margin-left: 40px;
+	@include bp('med') {
+		margin-left:0;
+	}
+	@include bp('smlMed') {
+		flex-direction:column;
+		align-items:center;
+	}
+}
+
+.topBar .userMedia h2 {
+	font-size: 2rem;
+	margin-right:20px;
+	@include bp('med') {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	@include bp('smlMed') {
+		margin-bottom:10px;
+		margin-top:10px;
+	}
+}
+
+.userMedia .imgContain {
+	width:15%;
+	transform: rotate(6deg);
+	// border-radius: 10px;
+	border: 1px solid $surpriseOrange;
+	@include bp('med') {
+		width:25%;
+		// flex-shrink:0;
+	}
+}
+
+.userMedia .imgContain img {
+	max-width: 100%;
+	display: block;
+}
+
+.userMedia .ratingMessage {
+	margin-left: 10px;
+	text-align: center;
+	background: $accentGreen;
+	padding: 8px;
+	color:$white;
+	border: 1px solid $white;
+	border-radius:10px;
+	letter-spacing: 1.5px;
+	transform: translateX(-10px) rotate(6deg);
+	align-self: flex-start;
+	@include bp('smlMed') {
+		align-self: center;
+		transform: translateX(0) rotate(0deg);
+	}
+	p {
+		margin:0;
+	}
+}
+
+//When results shows media/content:
+.result {
+	width:15%;
+	img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+h5.poisin {
+	font-family: $cursive;
+	color: $darkGrey;
+}
+
+h5 span.mediaChoice {
+	@include netflixText();
+}
+//These Styles are for the Booze Results
+.boozeResultItem {
+	width:25%;
+	height: auto;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	padding: 10px 5px 5px 5px;
+	text-align: center;
+	@include bp('lrg') {
+		width:48%;
+		// padding:0;
+	}
+}
+
+.boozeResultItem:hover {
+	box-shadow: 1px 1px 6px $darkGrey;
+}
+
+.boozeResultItem h3 {
+	font-size: 2rem;
+	font-family: $sanSerif;	
+}
+
+.boozeResultItem h4 {
+	font-size: 1.8rem;
+	font-family: $cursive;
+	letter-spacing: 1.5px;
+	color: $darkGrey;
+}
+
+.boozeResultItem .contain {
+	display: flex;
+	align-items:center;
+	@include bp('lrg') {
+		flex-direction:column;
+	}
+}
+.boozeResultItem .imageContain {
+	max-width: 50%;
+}
+
+.boozeResultItem .containText {
+	text-align: center;
+	p {
+		margin:0;
+	}
+}
+
+//These Styles are for the Content Results
+.mediaResult {
+	// width: 100%;
+	height: auto;
+	}
+.resultMediaContain {
+	position: relative;
+	@include bp('med') {
+		display: flex;
+	}
+}
+
+.resultMediaContain .imgContain {
+	@include bp('med') {
+	max-width:50%;
+	}
+}
+
+.resultMediaContain .overlay {
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	display:none;
+	transition: all 0.3s ease-in;
+	text-align:center;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	background: transparentize($white, 0.1);
+	padding:10px;
+	@include bp('med'){
+		display:flex;
+		position:static;
+		max-width: 50%;
+		background: white;
+	}
+	h4 {
+		color:$deepBlue;
+		@include bp('sml'){
+			font-size: 1.3rem;
+		}
+	}
+	p {
+		margin:0;
+		font-size: 1.4rem;
+		@include bp('sml') {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.resultMediaContain:hover .overlay {
+	display:flex;
+	@include bp('med'){
+		display: flex;
+	}	
+}
+
+

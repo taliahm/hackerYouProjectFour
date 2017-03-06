@@ -1,0 +1,71 @@
+
+$white : #F5F5F5;
+$darkGrey: #939393;
+
+$netflixRed: #E50914;
+$blackish: #0E0001;
+$deepRed: #800006;
+$accentBlue: #068F85;
+$accentGreen: #19BF08;
+$surpriseOrange: #E96A09;
+$deepBlue: #004E48;
+
+$cursive: 'Lobster', cursive;
+$rounded: 'Quicksand', sans-serif;
+$sanSerif: 'Josefin Sans', sans-serif;
+
+$bp-large: 940px;
+$bp-medium: 767px;
+$bp-small: 480px;
+$bp-smlMed: 540px;
+
+@mixin inputStrip(){
+	background:none;
+	outline:none;
+	border:none;
+}
+
+@mixin buttonStyle($color, $bgrndColor){
+	background: none;
+	background: $bgrndColor;
+	color: $color;
+	border: none;
+	box-shadow: 2px 2px 1px darken($bgrndColor, 5);
+}
+
+@mixin netflixText() {
+	color:$netflixRed;
+	text-transform: uppercase;
+	-webkit-text-stroke: 1px $white;
+	 text-shadow: 3px 3px 0px #9a9898;
+	 font-family: sans-serif;
+}
+
+@mixin bp($size) {
+	@if $size == 'xlrg' {
+		@media (max-width: 1200px) {
+			@content;
+	}
+}
+@if $size =='lrg' {
+	@media (max-width: $bp-large){
+		@content;
+	}
+}
+
+@if ($size =='med') {
+	@media (max-width: $bp-medium){
+		@content;
+	}
+}
+@if ($size =='smlMed') {
+	@media (max-width: $bp-smlMed){
+		@content;
+	}
+}
+@if ($size =='sml') {
+	@media (max-width: $bp-small) {
+		@content;
+		}
+	}
+}

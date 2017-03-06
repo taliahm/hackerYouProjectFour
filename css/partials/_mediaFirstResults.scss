@@ -1,0 +1,55 @@
+//Results displayed once user searches for media
+ul.manyOptions {
+	display:flex;
+	flex-wrap:wrap;
+	// width:80%;
+	justify-content:center;
+	padding:0;
+	list-style: none;
+}
+.resultItemContain {
+	width:25%;
+	margin-bottom: 20px;
+	@include bp('lrg') {
+		width:50%;
+	}
+	input[type=radio] {
+		background: none;
+		display:none;
+	}
+	input[type=radio]:checked ~ .resultItem .imageContain img{
+		border: 3px solid $surpriseOrange;
+	}
+
+}
+
+.resultItem {
+	display: flex;
+	flex-direction:column;
+	text-align: center;
+	transition:all 0.3s ease-out;
+	h5 {
+		font-size: 1.3rem;
+	}
+	div.imageContain {
+		// display: flex;
+		max-width:45%;
+		flex-shrink:0;
+		margin: 0 auto;
+		@include bp('sml') {
+			max-width: calc(100% - 2px - 2px);
+			margin: 0 2px;
+		}
+		img {
+			margin:0 auto;
+			max-width: 100%;
+			// width:50%;
+			border: 3px solid transparent;
+			display: block;
+		}
+	}
+}
+
+.resultItem:hover {
+	transform: scale(1.05);
+}

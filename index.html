@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Netflix and Chill</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favcon.ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favcon.ico/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="page-wrap">
+	<section class="chooseFirstOption">	
+		<div class="wrapper">
+			<div class="title">
+				<h1>
+					<span class='upper'>Netflix</span> & Spill</h1>
+				<p>Alcohol pairings for your tv or movie watching!</p>
+			</div>
+			<div class="firstDecision">	
+				<input name="firstChoice" id="userChooseDrink" type="radio" value="What are you watching?">
+				<label for="userChooseDrink">What are you drinking?</label>
+				<input name="firstChoice" id="userChooseMedia" type="radio" value="What are you drinking?">
+				<label for="userChooseMedia">What are you watching?</label>
+			</div>
+			<div class="options">
+				<form action="" class="boozeForm">
+					<div class="getBooze">
+						<input placeholder="Enter a TV Show or Movie!" type="text" id="enterMovie">
+						<input type="submit" name="" value="Find" id="searchMedia">
+					</div>
+				</form>
+				<form action="" class="boozeFormPartTwo">
+					<ul class="manyOptions">
+						<!-- jquery generated -->
+					</ul>
+					<ul class="chooseTheBooze">
+						<li><h4>Choose what you'd like to drink!</h4></li>
+						<div class="containList">
+							<li>
+								<input id="whiteWineSecondary" type="radio" name="boozeType" value="white wine">
+								<label for="whiteWineSecondary">
+									<img src="images/whiteWine.png" alt="">
+									<h5>White Wine</h5>
+								</label>
+							</li>
+							<li>
+								<input id="redWineSecondary" type="radio" name="boozeType" value="red wine">
+								<label for="redWineSecondary">
+									<img src="images/redWine.png" alt="Red wine">
+									<h5>Red Wine</h5>
+								</label>
+							</li>
+							<li>
+								<input id="beerSecondary" type="radio" name="boozeType" value="beer">
+								<label for="beerSecondary">
+									<img src="images/beer.png" alt="beer">
+									<h5>Beer</h5>
+								</label>
+							</li>
+							<li>
+								<input id="ciderSecondary" type="radio" name="boozeType" value="cider">
+								<label for="ciderSecondary">
+									<img src="images/cider.png" alt="cider">
+									<h5>Cider</h5>
+								</label>
+							</li>
+						</div>
+						<li>
+							<input type="submit" name="submitButton" value="Get me a drink!" id="getBoozeSubmit">
+						</li>
+					</ul>
+				</form>
+				<form action="" class="getMedia">
+					<ul class="getYourBooze">
+						<li><h5>Pick your poison:</h5></li>
+						<div class=listContain>
+							<li>
+								<input name="chooseBooze" data-image = "cider" id="ciderInput" type="radio" value="cider">
+								<label for="ciderInput"> 
+									<div class="imageContain">
+										<img src="images/cider.png" alt="cider">
+									</div>
+									<h5>Cider</h5>
+								</label>
+							</li>
+							<li>
+								<input name="chooseBooze" data-image = "beer" id="beerInput" type="radio" value="beer">
+								<label for="beerInput">
+									<div class="imageContain">
+										<img src="images/beer.png" alt="beer">
+									</div>
+									<h5>Beer</h5>
+								</label>
+							</li>
+							<li>
+								<input name="chooseBooze" data-image = "wine" id="wineInput" type="radio" value='wine'>
+								<label for="wineInput">
+									<div class="imageContain">
+										<img src="images/wine.png" alt="wine">
+									</div>
+									<h5>Wine</h5>
+								</label>
+							</li>
+							<li>
+								<input name="chooseBooze" data-image = "martini" id="mixInput" type="radio" value="mixed">
+								<label for="mixInput">
+									<div class="imageContain">
+										<img src="images/martini.png" alt="Mixed Drink">
+									</div>
+									<h5>Mixed Drink!</h5>
+								</label>
+							</li>
+							<li>
+								<input name="chooseBooze" data-image = "straight" id="straightInput" type="radio" value="straight">
+								<label for="straightInput">
+									<div class="imageContain">
+										<img src="images/straight.png" alt="straight Up">
+									</div>
+									<h5>Straight up!</h5>
+								</label>
+							</li>
+						</div>
+					</ul>
+					<ul class="getYourContent">
+						<li><h5>Choose your content:</h5></li>
+						<div class="listContain">
+							<li>
+								<input type="radio" id="tvShowInput" name="mediaType" value="tv">
+								<label for="tvShowInput">
+									<div class="imageContain">
+										<img src="images/tv.png" alt="TV show">
+									</div>
+									<h5>TV Shows to binge!</h5>
+								</label>
+							</li>
+							<li>
+								<input type="radio" id="movieInput" name="mediaType" value="movie">
+								<label for="movieInput">
+									<div class="imageContain">
+										<img src="images/movie.png" alt="movie">
+									</div>
+									<h5>Movies to marathon!</h5>
+								</label>
+							</li>
+						</div>
+						<li>
+							<input type="submit" value="Get me some media!" id="getMediaSubmit" name="submitButton">
+						</li>
+					</ul>
+				</form>
+			</div> <!-- /.options -->
+		</div> <!-- /.wrapper -->
+	</section>
+	<section class="results">
+		<div class="wrapperResults">
+			<div class="topBar">
+				<div class="reset">
+					<button class="reload"><a href="#">Spill again?</a></button>
+				</div>
+				<div class="userMedia">
+					<!-- jquery generated -->
+				</div>
+			</div>
+			<div class="grid">
+				<!-- jquery generated -->
+			</div>
+		</div> <!-- /.wrapperResults -->
+	</section>
+	</div>
+	<footer>
+		<p>Created by: <span class="curly">Talia Harrison-Marcassa </span>using the 
+			<a href="https://lcboapi.com/" target="_blank">LBCO API</a> and 
+			<a href="https://developers.themoviedb.org/3" target="_blank">MovieDB API.</a>
+		</p>
+		<p>Thank you to <a href="https://thenounproject.com/" target="_blank">the Noun Project</a> for their beautiful icons.</p>
+		<p>Please <strong>always</strong> enjoy responsibly.</p>
+		<p>Not all content shown on this site is available on Netflix.</p>
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+	<script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.js"></script>
+	<script src="https://npmcdn.com/draggabilly@2.1/dist/draggabilly.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,292 @@
+//Set Initial States to Hidden
+form.getMedia, form.boozeForm, form.boozeFormPartTwo {
+	display: none;
+}
+
+//Style First Section
+.chooseFirstOption {
+	display: flex;
+	flex-direction:column;
+}
+
+.wrapper {
+	max-width: 80%;
+	margin: 50px auto 0 auto;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	@include bp('med') {
+		max-width: 100%;
+	}
+}
+
+//title Styles
+.title {
+	text-align: center;
+}
+
+.title h1 {
+		margin:0;
+		color: $darkGrey;
+		font-family: $cursive;
+		letter-spacing: 1.4px;
+		-webkit-text-stroke: 0.5px darken($darkGrey, 5);
+		.upper {
+			@include netflixText();
+			 @include bp ('sml') {
+			 	display: block;
+			 }
+		}
+	}
+
+.title p {
+	font-size: 2rem;
+	margin: 0 0 20px 0;
+	@include bp('sml') {
+		font-size: 1.5rem;
+	}
+}
+
+.firstDecision {
+	display:flex;
+	justify-content:center;
+	margin-bottom: 30px;
+	@include bp('sml') {
+		flex-direction:column;
+		align-items:center;
+	}
+	label {
+		transition: all 0.1s ease-out;
+		padding:10px;
+		border: 2px solid transparent;
+		background: $accentBlue;
+		border-radius: 10px;
+		color: $white;
+		letter-spacing: 1.2px;
+		font-size: 1.4rem;
+		&:hover {
+			background: darken($accentBlue, 5);
+		}
+	}
+	input[name=firstChoice]{
+		visibility: hidden;
+		transition: all 0.1s ease-in;
+	}
+	#userChooseDrink:checked ~ label[for=userChooseDrink] {
+		border: 2px solid $deepRed;
+	}
+	#userChooseMedia:checked ~ label[for=userChooseMedia]{
+		border: 2px solid $surpriseOrange;
+	}
+}
+
+.getBooze {
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+
+.getBooze input[type=text]{
+	@include inputStrip();
+	background: transparentize($darkGrey, 0.5);
+	padding:15px 5px;
+	width:300px;
+	font-size: 1.8rem;
+	color: $blackish;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 2px 2px 1px darken($darkGrey, 5);
+	margin-bottom: 20px;
+}
+
+.getBooze input[type=text]::-webkit-input-placeholder{
+	color: $accentBlue;
+}
+
+#searchMedia {
+	@include buttonStyle($white, $darkGrey);
+	padding: 15px 5px;
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+}
+//This section shows up after the user chooses what content they are watching in Option B
+ul.chooseTheBooze {
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	padding:0;
+	list-style: none;
+	max-width:80%;
+	margin: 0 auto 70px auto;
+	@include bp('sml') {
+		max-width: 100%;
+	}
+}
+
+.chooseTheBooze h4 {
+	margin-bottom: 15px;
+	font-size: 2.3rem;
+	font-family: $cursive;
+	letter-spacing: 1.3px;
+}
+
+.chooseTheBooze .containList {
+	display:flex;
+	justify-content:center;
+	margin-bottom: 10px;
+	@include bp('sml') {
+		flex-wrap:wrap;
+	}
+	li {
+		text-align: center;
+		transition: all 0.3s ease-out;
+		@include bp('sml') {
+			max-width: 50%;
+		}
+		&:hover img{
+			transform: scale(1.1);
+		}
+		&:hover h5 {
+			color: $surpriseOrange;
+		}
+	}
+	label {
+		display: block;
+	}
+	h5 {
+		font-size: 2rem;
+		transition: all 0.3s ease-out;
+		@include bp ('sml') {
+			font-size: 1.5rem;
+		}
+	}
+	input[name=boozeType]{
+		display: none;
+	}
+	input[name=boozeType]:checked ~ label img{
+		border: 2px solid $surpriseOrange;
+	}
+	li label img {
+		max-width: 100%;
+		width:20%;
+		display:block;
+		margin: 0 auto;
+		border-radius: 5%;
+		padding: 5px;
+		border: 2px solid transparent;
+		transition: all 0.3s ease-out;
+		@include bp('lrg'){
+			width:50%;
+		}
+	}
+}
+
+#getBoozeSubmit, #getMediaSubmit {
+	@include buttonStyle($white, $accentBlue);
+	font-size: 2.4rem;
+	border-radius: 10px;
+	padding:10px;
+	margin-bottom: 75px;
+	&:hover {
+		background: darken($accentBlue, 5);
+	}
+}
+
+//Option A - user is drinking something and needs media suggestions
+//.getMedia styles both lists of options
+.getMedia{
+	padding:0;
+	margin: 0 auto;
+	li h5 {
+		font-size: 2.2rem;
+		font-family: $cursive;
+		letter-spacing: 1.2px;
+		margin-bottom: 20px;
+	}
+}
+
+.getMedia ul {
+	list-style: none;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	padding:0;
+}
+
+.getMedia li {
+	max-width: 25%;
+	@include bp('lrg') {
+		max-width: 100%;
+	}
+}
+
+.getMedia .listContain li {
+	@include bp('sml') {
+		width:50%;
+	}
+}
+
+.getMedia label {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	margin:30px auto 0 auto;
+	text-align:center;
+	@include bp('sml') {
+		// width:50%;
+		margin: 5px 20px;
+	}
+}
+
+.getMedia label .imageContain {
+	max-width: 50%;
+}
+
+.getMedia label img {
+	max-width: 100%;
+	border: 2px solid transparent;
+	transition: all 0.3s ease-out;
+	display: block;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.getMedia label h5 {
+		font-size: 1.6rem;
+		transition: all 0.3s ease-out;
+		font-family: $rounded;
+		margin-bottom: 10px;
+		margin-top:10px;
+}
+
+.listContain {
+	display: flex;
+	justify-content:center;
+	margin-bottom: 20px;
+	@include bp('sml') {
+		padding:0 20px;
+		flex-wrap:wrap;
+	}
+}
+
+.getMedia .imageContain:hover ~ h5 {
+	color:$surpriseOrange;
+}
+
+.getMedia input[name=chooseBooze]{
+	display: none;
+}
+
+.getMedia input[name=mediaType] {
+	display: none;
+}
+
+.getMedia input[name=chooseBooze]:checked ~ label img{
+	border: 2px solid $surpriseOrange;
+}
+
+.getMedia input[name=mediaType]:checked ~ label img{
+	border: 2px solid $surpriseOrange;
+}
+
+
