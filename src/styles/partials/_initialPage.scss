@@ -23,14 +23,16 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 //title Styles
 .title {
 	text-align: center;
+	margin-bottom: 60px;
+	margin-top: 60px;
 }
 
 .title h1 {
 		margin:0;
-		color: $darkGrey;
+		color: $white;
 		font-family: $cursive;
 		letter-spacing: 1.4px;
-		-webkit-text-stroke: 0.5px darken($darkGrey, 5);
+		font-size: 8rem;
 		.upper {
 			@include netflixText();
 			 @include bp ('sml') {
@@ -59,13 +61,14 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 		transition: all 0.1s ease-out;
 		padding:10px;
 		border: 2px solid transparent;
-		background: $accentBlue;
+		background: $deepBlue;
 		border-radius: 10px;
 		color: $white;
 		letter-spacing: 1.2px;
 		font-size: 1.4rem;
+		transition: all 0.3s ease-in;
 		&:hover {
-			background: darken($accentBlue, 5);
+			background: darken($deepBlue, 5);
 		}
 	}
 	input[name=firstChoice]{
@@ -76,7 +79,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 		border: 2px solid $deepRed;
 	}
 	#userChooseMedia:checked ~ label[for=userChooseMedia]{
-		border: 2px solid $surpriseOrange;
+		border: 2px solid $deepRed;
 	}
 }
 
@@ -88,14 +91,17 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 
 .getBooze input[type=text]{
 	@include inputStrip();
-	background: transparentize($darkGrey, 0.5);
+	background: $white;
 	padding:15px 5px;
-	width:300px;
+	width:350px;
 	font-size: 1.8rem;
 	color: $blackish;
 	border-radius: 10px 0 0 10px;
 	box-shadow: 2px 2px 1px darken($darkGrey, 5);
-	margin-bottom: 20px;
+	margin:50px 0 20px 0;
+	@include bp('med'){
+		width:280px;
+	}
 }
 
 .getBooze input[type=text]::-webkit-input-placeholder{
@@ -106,7 +112,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 	@include buttonStyle($white, $darkGrey);
 	padding: 15px 5px;
 	font-size: 1.8rem;
-	margin-bottom: 20px;
+	margin: 50px 0 20px 0;
 }
 //This section shows up after the user chooses what content they are watching in Option B
 ul.chooseTheBooze {
@@ -116,25 +122,31 @@ ul.chooseTheBooze {
 	padding:0;
 	list-style: none;
 	max-width:80%;
-	margin: 0 auto 70px auto;
+	margin: 40px auto 70px auto;
 	@include bp('sml') {
 		max-width: 100%;
 	}
 }
 
 .chooseTheBooze h4 {
-	margin-bottom: 15px;
-	font-size: 2.3rem;
-	font-family: $cursive;
-	letter-spacing: 1.3px;
+	font-size: 2.2rem;
+	letter-spacing: 1.4px;
+	margin-bottom: 20px;
 }
 
 .chooseTheBooze .containList {
 	display:flex;
 	justify-content:center;
-	margin-bottom: 10px;
-	@include bp('sml') {
-		flex-wrap:wrap;
+	margin-bottom: 60px;
+	background: $white;
+	border-radius: 10px;
+	max-width: 80%;
+	padding: 10px;
+	@include bp('med'){
+		max-width: 90%;
+	}
+	@include bp('sml'){
+		max-width:80%;
 	}
 	li {
 		text-align: center;
@@ -146,7 +158,7 @@ ul.chooseTheBooze {
 			transform: scale(1.1);
 		}
 		&:hover h5 {
-			color: $surpriseOrange;
+			color: $deepBlue;
 		}
 	}
 	label {
@@ -155,7 +167,8 @@ ul.chooseTheBooze {
 	h5 {
 		font-size: 2rem;
 		transition: all 0.3s ease-out;
-		@include bp ('sml') {
+		color: $deepRed;
+		@include bp ('med') {
 			font-size: 1.5rem;
 		}
 	}
@@ -163,11 +176,11 @@ ul.chooseTheBooze {
 		display: none;
 	}
 	input[name=boozeType]:checked ~ label img{
-		border: 2px solid $surpriseOrange;
+		border: 2px solid $deepRed;
 	}
 	li label img {
 		max-width: 100%;
-		width:20%;
+		width:35%;
 		display:block;
 		margin: 0 auto;
 		border-radius: 5%;
@@ -181,13 +194,14 @@ ul.chooseTheBooze {
 }
 
 #getBoozeSubmit, #getMediaSubmit {
-	@include buttonStyle($white, $accentBlue);
+	@include buttonStyle($white, $deepBlue);
 	font-size: 2.4rem;
 	border-radius: 10px;
 	padding:10px;
 	margin-bottom: 75px;
+	transition: all 0.3s ease-in;
 	&:hover {
-		background: darken($accentBlue, 5);
+		background: darken($deepBlue, 5);
 	}
 }
 
@@ -196,12 +210,13 @@ ul.chooseTheBooze {
 .getMedia{
 	padding:0;
 	margin: 0 auto;
-	li h5 {
-		font-size: 2.2rem;
-		font-family: $cursive;
-		letter-spacing: 1.2px;
-		margin-bottom: 20px;
-	}
+}
+
+.getYourBooze__header, .getYourContent__header {
+	font-size: 2.2rem;
+	// font-family: $cursive;
+	letter-spacing: 1.4px;
+	margin-bottom: 20px;
 }
 
 .getMedia ul {
@@ -213,7 +228,7 @@ ul.chooseTheBooze {
 }
 
 .getMedia li {
-	max-width: 25%;
+	// max-width: 25%;
 	@include bp('lrg') {
 		max-width: 100%;
 	}
@@ -239,6 +254,16 @@ ul.chooseTheBooze {
 
 .getMedia label .imageContain {
 	max-width: 50%;
+	@include bp('sml'){
+		max-width: 100%;
+	}
+}
+
+.getMedia label .imageContain.imageContain--small {
+	max-width: 30%;
+	@include bp('sml'){
+		max-width: 80%;
+	}
 }
 
 .getMedia label img {
@@ -257,20 +282,51 @@ ul.chooseTheBooze {
 		font-family: $rounded;
 		margin-bottom: 10px;
 		margin-top:10px;
+		color: $deepRed;
+		transition: all 0.3s ease-in;
+}
+
+.getYourBooze {
+	margin-top: 40px;
+}
+
+.getYourContent {
+	margin-top: 40px;
 }
 
 .listContain {
 	display: flex;
 	justify-content:center;
+	align-items: baseline;
 	margin-bottom: 20px;
+	max-width: 50%;
+	background: $grey;
+	border-radius: 10px;
+	@include bp('lrg') {
+		max-width: 80%;
+	}
 	@include bp('sml') {
-		padding:0 20px;
-		flex-wrap:wrap;
+		padding:0 10px;
+		// flex-wrap:wrap;
+		max-width: 100%;
+		border-radius: 0;
+		padding: 20px 0 0 0;
 	}
 }
 
+.listContain--marginBottom {
+	margin-bottom: 60px;
+}
+
+.listContain--wrapper {
+	max-width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
 .getMedia .imageContain:hover ~ h5 {
-	color:$surpriseOrange;
+	color:$deepBlue;
 }
 
 .getMedia input[name=chooseBooze]{
@@ -282,11 +338,11 @@ ul.chooseTheBooze {
 }
 
 .getMedia input[name=chooseBooze]:checked ~ label img{
-	border: 2px solid $surpriseOrange;
+	border: 2px solid $deepBlue;
 }
 
 .getMedia input[name=mediaType]:checked ~ label img{
-	border: 2px solid $surpriseOrange;
+	border: 2px solid $deepBlue;
 }
 
 

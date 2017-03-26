@@ -1,9 +1,9 @@
 
 $white : #F5F5F5;
 $darkGrey: #939393;
-
+$grey: #d6d6d6;
 $netflixRed: #E50914;
-$blackish: #0E0001;
+$blackish: #101010;
 $deepRed: #800006;
 $accentBlue: #068F85;
 $accentGreen: #19BF08;
@@ -37,7 +37,7 @@ $bp-smlMed: 540px;
 	color:$netflixRed;
 	text-transform: uppercase;
 	-webkit-text-stroke: 1px $white;
-	 text-shadow: 3px 3px 0px #9a9898;
+	 // text-shadow: 3px 3px 0px #9a9898;
 	 font-family: sans-serif;
 }
 

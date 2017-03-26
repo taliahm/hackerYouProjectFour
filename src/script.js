@@ -131,6 +131,7 @@ spillApp.searchlcboDBTwo = function(param, firstArrayReturn){
 
 spillApp.showMediaToChoose = function(array) {
 	$('.manyOptions').empty();
+	$('.headerText').empty();
 	let isTv = function(media){ return media.media_type === 'tv'};
 	let isMovie = function(media){return media.media_type === 'movie'};
 	let tvFilter = array.filter(isTv);
@@ -138,6 +139,8 @@ spillApp.showMediaToChoose = function(array) {
 	const movieTitle = 'title';
 	const tvTitle = 'name';
 	if(array.length > 1) {
+		let headerText = `<h4>Confirm your media selection</h4>`
+		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
 			let listItem = `<input 
 								type=radio 
@@ -185,6 +188,8 @@ spillApp.showMediaToChoose = function(array) {
 	}
 
 	else if(array.length === 1) {
+		let headerText = `<h4>Was this what you were looking for?</h4>`
+		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
 			let listItem = `
 								<input 
@@ -347,7 +352,7 @@ spillApp.getComparativeMedia = function(array){
 }
 
 spillApp.displayComparitiveMedia = function(result){
-	// console.log(result);
+	console.log(result);
 	if (result.poster_path !== null) {
 		var mediaPoster = result.poster_path; 
 		}
@@ -357,13 +362,14 @@ spillApp.displayComparitiveMedia = function(result){
 	if (rating < 4){ ratingMessage = 'Maybe pick a couple options...'}
 	else if (rating > 4.1 && rating < 7.1){ratingMessage = 'Looks good!'}
 	else if (rating >= 7.1){ratingMessage = 'Good stuff!'}
-	let userMessage = `<h2>We've found some pairings for your choice:</h2>
-						<div class="imgContain">
-						 	<img src="${spillApp.posterURL}${mediaPoster}">
-						 </div>
-						 <div class='ratingMessage'>
-							 <p>Rated: ${rating}/10</p>
-							 <p>${ratingMessage}</p>
+	let userMessage = `<div class="userMedia__header">
+							<h2>We've found some pairings for your choice!</h2>
+							<h3>Rating: ${rating}/10 ${ratingMessage}</h3>
+						</div>
+						<div class="fullContain">
+							<div class="imgContain">
+							 	<img src="${spillApp.posterURL}${mediaPoster}">
+							 </div>
 						</div>`;
 	// console.log(userMessage);
 	$('.userMedia').append(userMessage);
@@ -450,18 +456,17 @@ spillApp.displayResults = function(array) {
 		}
 		$('.results').show();	
 }
-//YOU ARE HERE
+
 spillApp.showUserChoice = function(choice){
 	$('.userMedia').empty();
 	let userMediaPrint = spillApp.userMediaChoice.toUpperCase();
 	// console.log(userMediaPrint);
 	let userChoice = $(`input[value=${choice}][name=chooseBooze]`);
 	let userBooze = $(userChoice).data('image');
-	let elemString = `	<h5 class="poisin"> Your Poisin:</h5>
+	let elemString = `<h5><span class="mediaChoice">${userMediaPrint}</span> selections for your choice of poisin: </h5>
 							<div class="result">
 								<img src="images/${userBooze}.png">
-							</div>
-						<h5> <span class="mediaChoice">${userMediaPrint}</span> choices for you:</h5>`;
+							</div>`;
 	$('.userMedia').append(elemString);
 }
 
@@ -582,7 +587,7 @@ spillApp.initPackeryGetBooze = function(){
 		  columnWidth: '.grid-sizerOne',
 		  percentPosition: true,
 		  imagesLoaded: true,
-		  gutter: 10
+		  gutter: 20
 	});
 	grid.imagesLoaded().progress(function() {
  		 grid.packery();

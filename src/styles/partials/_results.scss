@@ -1,14 +1,20 @@
 //Layout primarily with PACKERY plugin
-.wrapperResults {
-	max-width: 1400px;
-	margin: 0 auto;
-}
+// .wrapperResults {
+// 	max-width: 1400px;
+// 	margin: 0 auto;
+// }
 .grid {
 	max-width: 100%;
+	// max-width: 80%;
+	// margin: 0 auto;
+	margin-left: 100px;
+	@include bp('lrg') {
+		margin-left:0;
+	}
 }
 
 div.grid-item {
-	background: white;
+	// background: white;
 	box-shadow: 1px 1px 3px $darkGrey;
 }
 
@@ -34,7 +40,10 @@ div.grid-item img {
 
 .topBar {
 	display: flex;
-	padding: 10px 10px;
+	background: $grey;
+	margin-bottom: 40px;
+	padding: 20px 10px;
+	position: relative;
 	@include bp('med') {
 		flex-direction:column;
 	}
@@ -45,7 +54,7 @@ div.grid-item img {
 }
 
 .topBar .reload {
-	@include buttonStyle($white, $accentGreen);
+	@include buttonStyle($white, $deepBlue);
 	border-radius: 10px;
 	padding:10px;
 	font-size: 1.5rem;
@@ -55,7 +64,7 @@ div.grid-item img {
 		text-decoration: none;
 	}
 	&:hover {
-		background: darken($accentGreen, 5);
+		background: darken($deepBlue, 5);
 	}
 }
 
@@ -64,6 +73,7 @@ div.grid-item img {
 	justify-content: center;
 	align-items:center;
 	margin-left: 40px;
+	padding: 40px 0;
 	@include bp('med') {
 		margin-left:0;
 	}
@@ -73,12 +83,22 @@ div.grid-item img {
 	}
 }
 
-.topBar .userMedia h2 {
-	font-size: 2rem;
-	margin-right:20px;
+.topBar .userMedia .userMedia__header {
+	text-align: center;
+	@include bp('smlMed'){
+		margin-bottom:20px;
+	}
+}
+
+.userMedia__header h2 {
+	font-size: 3.5rem;
+	// margin-right:20px;
+	color: $blackish;
+	text-align: center;
+	@include bp('lrg')
+		font-size: 2.8rem;
 	@include bp('med') {
-		font-size: 1.5rem;
-		text-align: center;
+		font-size: 1.8rem;
 	}
 	@include bp('smlMed') {
 		margin-bottom:10px;
@@ -86,58 +106,69 @@ div.grid-item img {
 	}
 }
 
+.userMedia__header h3 {
+	color: $deepBlue;
+	font-size: 3rem;
+	@include bp('lrg'){
+		font-size: 2.6rem;
+	}
+	@include bp('med') {
+		font-size: 1.6rem;
+	}
+}
+
 .userMedia .imgContain {
-	width:15%;
+	width:55%;
 	transform: rotate(6deg);
 	// border-radius: 10px;
-	border: 1px solid $surpriseOrange;
-	@include bp('med') {
-		width:25%;
+	border: 1px solid $deepRed;
+	@include bp('lrg') {
+		width:55%;
+		margin: 0 auto;
 		// flex-shrink:0;
 	}
 }
+.fullContain {
+	position: absolute;
+	top: 15px;
+	left: 75%;
+	z-index:99;
+	@include bp('lrg'){
+		position: relative;
+		top: auto;
+		left:auto;
+	}
+}
+
 
 .userMedia .imgContain img {
 	max-width: 100%;
 	display: block;
 }
 
-.userMedia .ratingMessage {
-	margin-left: 10px;
-	text-align: center;
-	background: $accentGreen;
-	padding: 8px;
-	color:$white;
-	border: 1px solid $white;
-	border-radius:10px;
-	letter-spacing: 1.5px;
-	transform: translateX(-10px) rotate(6deg);
-	align-self: flex-start;
-	@include bp('smlMed') {
-		align-self: center;
-		transform: translateX(0) rotate(0deg);
-	}
-	p {
-		margin:0;
-	}
-}
 
 //When results shows media/content:
 .result {
-	width:15%;
+	width:7%;
 	img {
 		max-width: 100%;
 		display: block;
 	}
 }
 
-h5.poisin {
-	font-family: $cursive;
-	color: $darkGrey;
-}
+// h5.poisin {
+// 	font-family: $cursive;
+// 	color: $blackish;
+// 	font-size: 4.5rem;
+// }
 
+.userMedia h5 {
+	color: $blackish;
+	// font-size: 4rem;
+}
 h5 span.mediaChoice {
 	@include netflixText();
+	font-size:  6rem;
 }
 //These Styles are for the Booze Results
 .boozeResultItem {
@@ -148,9 +179,13 @@ h5 span.mediaChoice {
 	align-items: center;
 	padding: 10px 5px 5px 5px;
 	text-align: center;
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 42%,rgba(255,255,255,1) 58%,rgba(214,214,214,0.99) 81%,rgba(214,214,214,0.99) 98%,rgba(214,214,214,0.99) 100%);
 	@include bp('lrg') {
 		width:48%;
-		// padding:0;
+		background: white;
+	}
+	@include bp('sml') {
+		width: 100%;
 	}
 }
 
@@ -160,14 +195,15 @@ h5 span.mediaChoice {
 
 .boozeResultItem h3 {
 	font-size: 2rem;
-	font-family: $sanSerif;	
+	font-family: $sanSerif;
+	color: $blackish;	
 }
 
 .boozeResultItem h4 {
 	font-size: 1.8rem;
 	font-family: $cursive;
 	letter-spacing: 1.5px;
-	color: $darkGrey;
+	color: $deepBlue;
 }
 
 .boozeResultItem .contain {
@@ -185,6 +221,7 @@ h5 span.mediaChoice {
 	text-align: center;
 	p {
 		margin:0;
+		color: $blackish;
 	}
 }
 
@@ -195,6 +232,7 @@ h5 span.mediaChoice {
 	}
 .resultMediaContain {
 	position: relative;
+	transition: all 0.3s ease-out;
 	@include bp('med') {
 		display: flex;
 	}
@@ -212,14 +250,16 @@ h5 span.mediaChoice {
 	left:0;
 	bottom:0;
 	right:0;
-	display:none;
+	display:flex;
+	opacity: 0;
 	transition: all 0.3s ease-in;
 	text-align:center;
 	flex-direction:column;
 	align-items:center;
 	justify-content:center;
-	background: transparentize($white, 0.1);
+	background: transparentize($blackish, 0.1);
 	padding:10px;
+	color: $blackish;
 	@include bp('med'){
 		display:flex;
 		position:static;
@@ -228,6 +268,7 @@ h5 span.mediaChoice {
 	}
 	h4 {
 		color:$deepBlue;
+		margin-bottom: 20px;
 		@include bp('sml'){
 			font-size: 1.3rem;
 		}
@@ -235,6 +276,8 @@ h5 span.mediaChoice {
 	p {
 		margin:0;
 		font-size: 1.4rem;
+		line-height: 1.3;
+		color: $white;
 		@include bp('sml') {
 			font-size: 1.2rem;
 		}
@@ -242,7 +285,8 @@ h5 span.mediaChoice {
 }
 
 .resultMediaContain:hover .overlay {
-	display:flex;
+	// display:flex;
+	opacity: 1;
 	@include bp('med'){
 		display: flex;
 	}	

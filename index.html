@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Netflix and Chill</title>
+	<title>Netflix and Spill</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favcon.ico/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favcon.ico/favicon-16x16.png">
@@ -11,7 +11,7 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Quicksand" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
 	<div class="page-wrap">
@@ -36,6 +36,7 @@
 					</div>
 				</form>
 				<form action="" class="boozeFormPartTwo">
+					<div class="headerText"></div>
 					<ul class="manyOptions">
 						<!-- jquery generated -->
 					</ul>
@@ -78,7 +79,7 @@
 				</form>
 				<form action="" class="getMedia">
 					<ul class="getYourBooze">
-						<li><h5>Pick your poison:</h5></li>
+						<li><h5 class="getYourBooze__header">Pick your poison:</h5></li>
 						<div class=listContain>
 							<li>
 								<input name="chooseBooze" data-image = "cider" id="ciderInput" type="radio" value="cider">
@@ -128,26 +129,28 @@
 						</div>
 					</ul>
 					<ul class="getYourContent">
-						<li><h5>Choose your content:</h5></li>
-						<div class="listContain">
-							<li>
-								<input type="radio" id="tvShowInput" name="mediaType" value="tv">
-								<label for="tvShowInput">
-									<div class="imageContain">
-										<img src="images/tv.png" alt="TV show">
-									</div>
-									<h5>TV Shows to binge!</h5>
-								</label>
-							</li>
-							<li>
-								<input type="radio" id="movieInput" name="mediaType" value="movie">
-								<label for="movieInput">
-									<div class="imageContain">
-										<img src="images/movie.png" alt="movie">
-									</div>
-									<h5>Movies to marathon!</h5>
-								</label>
-							</li>
+						<li><h5 class="getYourContent__header">Choose your content:</h5></li>
+						<div class="listContain listContain--marginBottom">
+							<div class="listContain--wrapper">
+								<li>
+									<input type="radio" id="tvShowInput" name="mediaType" value="tv">
+									<label for="tvShowInput">
+										<div class="imageContain imageContain--small">
+											<img src="images/tv.png" alt="TV show">
+										</div>
+										<h5>TV Shows to binge!</h5>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="movieInput" name="mediaType" value="movie">
+									<label for="movieInput">
+										<div class="imageContain imageContain--small">
+											<img src="images/movie.png" alt="movie">
+										</div>
+										<h5>Movies to marathon!</h5>
+									</label>
+								</li>
+							</div>
 						</div>
 						<li>
 							<input type="submit" value="Get me some media!" id="getMediaSubmit" name="submitButton">
@@ -188,7 +191,7 @@
 	<script src="https://unpkg.com/packery@2.1/dist/packery.pkgd.js"></script>
 	<script src="https://npmcdn.com/draggabilly@2.1/dist/draggabilly.pkgd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="src/script.js"></script>
 </body>
 </html>
 
