@@ -142,6 +142,15 @@ spillApp.showMediaToChoose = function(array) {
 		let headerText = `<h4>Confirm your media selection</h4>`
 		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
+			console.log(item.poster_path)
+			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let image = '';
+			if(item.poster_path != null) {
+				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
+				console.log('image exsists')
+			}
+			else { image = noImage;
+					 console.log('no image')}
 			let listItem = `<input 
 								type=radio 
 								id=${item.id} 
@@ -153,7 +162,7 @@ spillApp.showMediaToChoose = function(array) {
 							<div class='resultItem'>
 								<label for=${item.id}>
 									<div class="imageContain">
-										<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">
+										${image}
 									</div>
 									<h5>${item[tvTitle]}</h5>
 								</label>
@@ -239,7 +248,7 @@ spillApp.showMediaToChoose = function(array) {
 		});
 	}
 	else if(array.length < 1) {
-		let elemString = `<li>Nothing here, please search again!</li>`;
+		let elemString = `<li class="nothing">Nothing here, please search again!</li>`;
 		$('.manyOptions').append(elemString);
 		$('.boozeFormPartTwo').show();
 		$('.chooseTheBooze').hide();
@@ -249,10 +258,19 @@ spillApp.showMediaToChoose = function(array) {
 spillApp.gsapInit = () => {
 	const barOne = $('.animateOne')
 	const barTwo = $('.animateTwo')
+	const barThree = $('.animateThree')
+	const barFour = $('.animateFour')
+	const barFive = $('.animateFive')
+	const barSix = $('.animateSix')
+	const barSeven = $('.animateSeven')
 	spillApp.timeline = new TimelineMax({paused: true})
 	spillApp.timeline 
-		.to(barOne, 1, {backgroundColor: 'purple'}, 1)
-		.to(barOne, 1, {backgroundColor: 'green'}, 2)
+		.to(barOne, 0.5, {backgroundColor: 'purple'}, 1)
+		.to(barFour, 0.5, {backgroundColor: 'cyan'}, 1)
+		.to(barTwo, 0.5, {backgroundColor: 'green'}, 1.5)
+		.to(barFive, 0.5, {backgroundColor: 'blue'}, 1.5)
+		.to(barFour, 0.5, {backgroundColor: 'yellow'}, 2)
+		// .to(barFive, 0.5, {backgroundColor: 'red'}, 2)
 }
 //ANIMATION
 spillApp.animation = function(){
@@ -377,12 +395,18 @@ spillApp.displayComparitiveMedia = function(result){
 	else {var mediaPoster = result.title};
 	var rating = result.vote_average;
 	var ratingMessage;
-	if (rating < 4){ ratingMessage = 'Maybe pick a couple options...'}
-	else if (rating > 4.1 && rating < 7.1){ratingMessage = 'Looks good!'}
-	else if (rating >= 7.1){ratingMessage = 'Good stuff!'}
+	var stars = '';
+	if (rating < 4){ 
+			ratingMessage = 'Maybe pick a couple options...'
+			stars = `<i class="fa fa-star" aria-hidden="true"></i>`}
+	else if (rating > 4.1 && rating < 7.1){ratingMessage = 'Looks good!'
+			stars = `<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>`}
+	else if (rating >= 7.1){ratingMessage = 'Good stuff!'
+			 stars = `<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>`}
 	let userMessage = `<div class="userMedia__header">
 							<h2>We've found some pairings for your choice!</h2>
-							<h3>Rating: ${rating}/10 ${ratingMessage}</h3>
+							<h3>Rating: ${stars}</h3>
+							<h3>${ratingMessage}</h3>
 						</div>
 						<div class="fullContain">
 							<div class="imgContain">

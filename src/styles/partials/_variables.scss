@@ -13,6 +13,7 @@ $deepBlue: #004E48;
 $cursive: 'Lobster', cursive;
 $rounded: 'Quicksand', sans-serif;
 $sanSerif: 'Josefin Sans', sans-serif;
+$netflix: 'Oswald', sans-serif;
 
 $bp-large: 940px;
 $bp-medium: 767px;
@@ -36,9 +37,11 @@ $bp-smlMed: 540px;
 @mixin netflixText() {
 	color:$netflixRed;
 	text-transform: uppercase;
-	-webkit-text-stroke: 1px $white;
+	// -webkit-text-stroke: 1px $white;
+	letter-spacing: 5px;
 	 // text-shadow: 3px 3px 0px #9a9898;
-	 font-family: sans-serif;
+	 font-family: $netflix;
+	 // font-weight: 700;
 }
 
 @mixin bp($size) {

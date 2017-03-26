@@ -46,24 +46,31 @@ footer {
 	// left:0;
 	// right:0;
 	padding:20px 10px;
-	background: transparentize($accentBlue, 0.5);
+	background: darken($deepBlue, 5);
 	p {
 		margin:0;
+		line-height: 1.6;
+		letter-spacing: 1.2px;
+	}
+	p:first-child {
+		font-size: 1.4rem;
+
 	}
 	span.curly {
-		font-family: $cursive;
-		letter-spacing: 1.3px;
+		// font-family: $cursive;
+		letter-spacing: 1.2px;
+		color: $grey;
 		@include bp('sml') {
 			display: block;
 		}
 	}
 	a {
 		text-decoration: none;
-		color: $deepBlue;
+		color: $grey;
 		transition: all 0.3s ease-out;
 	}
 	a:hover {
-		color:$surpriseOrange;
+		color:$deepRed;
 	}
 }
 

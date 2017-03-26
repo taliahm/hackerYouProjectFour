@@ -10,7 +10,9 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Quicksand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster|Quicksand|Oswald: 400, 700" rel="stylesheet">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
@@ -18,22 +20,22 @@
 	<div class="animatedSquare">
 		<div class="container">
 		  <div class="row tall">
-		    <div class="bar tall blue"></div>
-		    <div class="bar tall red"></div>
-		    <div class="bar tall pink"></div>
-		    <div class="bar tall green"></div>
-		    <div class="bar tall cyan"></div>
-		    <div class="bar tall yellow"></div>
-		    <div class="bar tall white"></div>
+		    <div class="bar tall blue animateOne"></div>
+		    <div class="bar tall red animateTwo"></div>
+		    <div class="bar tall pink animateThree"></div>
+		    <div class="bar tall green animateFour"></div>
+		    <div class="bar tall cyan animateFive"></div>
+		    <div class="bar tall yellow animateSix"></div>
+		    <div class="bar tall white animateSeven"></div>
 		  </div>
 		  <div class="row short">
-		    <div class="bar white animateOne"></div>
-		    <div class="bar black animateTwo"></div>
-		    <div class="bar cyan animateThree"></div>
-		    <div class="bar black animateFour"></div>
-		    <div class="bar pink animateFive"></div>
-		    <div class="bar black animateSix"></div>
-		    <div class="bar blue animateSeven"></div>
+		    <div class="bar white"></div>
+		    <div class="bar black"></div>
+		    <div class="bar cyan"></div>
+		    <div class="bar black"></div>
+		    <div class="bar pink"></div>
+		    <div class="bar black"></div>
+		    <div class="bar blue "></div>
 		  </div>
 		    <h4>Please standby while we get your results!</h4>
 
@@ -48,9 +50,9 @@
 			</div>
 			<div class="firstDecision">	
 				<input name="firstChoice" id="userChooseDrink" type="radio" value="What are you watching?">
-				<label for="userChooseDrink">What are you drinking?</label>
+				<label for="userChooseDrink">What are you <span>drinking</span>?</label>
 				<input name="firstChoice" id="userChooseMedia" type="radio" value="What are you drinking?">
-				<label for="userChooseMedia">What are you watching?</label>
+				<label for="userChooseMedia">What are you <span>watching</span>?</label>
 			</div>
 			<div class="options">
 				<form action="" class="boozeForm">
@@ -201,7 +203,7 @@
 	</section>
 	</div>
 	<footer>
-		<p>Created by: <span class="curly">Talia Harrison-Marcassa </span>using the 
+		<p>Created by: <span class="curly"><a href="http://talialongname.com">Talia Harrison-Marcassa </a></span>using the 
 			<a href="https://lcboapi.com/" target="_blank">LBCO API</a> and 
 			<a href="https://developers.themoviedb.org/3" target="_blank">MovieDB API.</a>
 		</p>

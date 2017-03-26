@@ -150,8 +150,8 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   .title h1 .upper {
     color: #E50914;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #F5F5F5;
-    font-family: sans-serif; }
+    letter-spacing: 5px;
+    font-family: "Oswald", sans-serif; }
     @media (max-width: 480px) {
       .title h1 .upper {
         display: block; } }
@@ -167,29 +167,38 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   display: flex;
   justify-content: center;
   margin-bottom: 30px; }
-  @media (max-width: 480px) {
+  @media (max-width: 767px) {
     .firstDecision {
       flex-direction: column;
       align-items: center; } }
   .firstDecision label {
     transition: all 0.1s ease-out;
-    padding: 10px;
+    padding: 10px 30px;
     border: 2px solid transparent;
     background: #004E48;
     border-radius: 10px;
     color: #F5F5F5;
     letter-spacing: 1.2px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     transition: all 0.3s ease-in; }
     .firstDecision label:hover {
       background: #003530; }
+    .firstDecision label span {
+      font-style: italic; }
   .firstDecision input[name=firstChoice] {
     visibility: hidden;
     transition: all 0.1s ease-in; }
   .firstDecision #userChooseDrink:checked ~ label[for=userChooseDrink] {
-    border: 2px solid #800006; }
+    border: 2px solid #003530; }
   .firstDecision #userChooseMedia:checked ~ label[for=userChooseMedia] {
-    border: 2px solid #800006; }
+    border: 2px solid #006860; }
+
+.firstDecision label:nth-child(2) {
+  margin-right: 30px; }
+  @media (max-width: 767px) {
+    .firstDecision label:nth-child(2) {
+      margin-right: 0;
+      margin-bottom: 20px; } }
 
 .getBooze {
   display: flex;
@@ -201,7 +210,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   outline: none;
   border: none;
   background: #F5F5F5;
-  padding: 15px 5px;
+  padding: 15px 10px;
   width: 350px;
   font-size: 1.8rem;
   color: #101010;
@@ -221,7 +230,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   color: #F5F5F5;
   border: none;
   box-shadow: 2px 2px 1px #868686;
-  padding: 15px 5px;
+  padding: 15px;
   font-size: 1.8rem;
   margin: 50px 0 20px 0; }
 
@@ -298,9 +307,10 @@ ul.chooseTheBooze {
   color: #F5F5F5;
   border: none;
   box-shadow: 2px 2px 1px #003530;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 30px;
   margin-bottom: 75px;
   transition: all 0.3s ease-in; }
   #getBoozeSubmit:hover, #getMediaSubmit:hover {
@@ -382,7 +392,8 @@ ul.chooseTheBooze {
   margin-bottom: 20px;
   max-width: 50%;
   background: #d6d6d6;
-  border-radius: 10px; }
+  border-radius: 10px;
+  padding-bottom: 20px; }
   @media (max-width: 940px) {
     .listContain {
       max-width: 80%; } }
@@ -443,6 +454,9 @@ ul.manyOptions {
   .resultItemContain input[type=radio]:checked ~ .resultItem .imageContain img {
     border: 5px solid #800006; }
 
+.manyOptions .nothing {
+  font-size: 2rem; }
+
 .resultItem {
   display: flex;
   flex-direction: column;
@@ -472,7 +486,8 @@ ul.manyOptions {
 
 .grid {
   max-width: 100%;
-  margin-left: 100px; }
+  margin-left: 100px;
+  margin-bottom: 80px; }
   @media (max-width: 940px) {
     .grid {
       margin-left: 0; } }
@@ -527,7 +542,7 @@ div.grid-item img {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 60px;
   padding: 40px 0; }
   @media (max-width: 767px) {
     .topBar .userMedia {
@@ -557,11 +572,12 @@ div.grid-item img {
       margin-top: 10px; } }
 
 .userMedia__header h3 {
-  color: #004E48;
-  font-size: 3rem; }
+  color: #101010;
+  font-size: 2.6rem;
+  letter-spacing: 1.8px; }
   @media (max-width: 940px) {
     .userMedia__header h3 {
-      font-size: 2.6rem; } }
+      font-size: 2.4rem; } }
   @media (max-width: 767px) {
     .userMedia__header h3 {
       font-size: 1.6rem; } }
@@ -602,8 +618,8 @@ div.grid-item img {
 h5 span.mediaChoice {
   color: #E50914;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px #F5F5F5;
-  font-family: sans-serif;
+  letter-spacing: 5px;
+  font-family: "Oswald", sans-serif;
   font-size: 6rem; }
 
 .boozeResultItem {
@@ -614,7 +630,7 @@ h5 span.mediaChoice {
   align-items: center;
   padding: 10px 5px 5px 5px;
   text-align: center;
-  background: linear-gradient(to right, white 0%, white 42%, white 58%, rgba(214, 214, 214, 0.99) 81%, rgba(214, 214, 214, 0.99) 98%, rgba(214, 214, 214, 0.99) 100%); }
+  background: white; }
   @media (max-width: 940px) {
     .boozeResultItem {
       width: 48%;
@@ -629,7 +645,8 @@ h5 span.mediaChoice {
 .boozeResultItem h3 {
   font-size: 2rem;
   font-family: "Josefin Sans", sans-serif;
-  color: #101010; }
+  color: #101010;
+  margin: 20px 0; }
 
 .boozeResultItem h4 {
   font-size: 1.8rem;
@@ -645,12 +662,15 @@ h5 span.mediaChoice {
       flex-direction: column; } }
 
 .boozeResultItem .imageContain {
-  max-width: 50%; }
+  max-width: 50%;
+  flex-shrink: 0; }
 
 .boozeResultItem .containText {
-  text-align: center; }
+  text-align: center;
+  padding-right: 20px; }
   .boozeResultItem .containText p {
     margin: 0;
+    line-height: 1.4;
     color: #101010; }
 
 .mediaResult {
@@ -741,21 +761,25 @@ h5, h6 {
 
 footer {
   padding: 20px 10px;
-  background: rgba(6, 143, 133, 0.5); }
+  background: #003530; }
   footer p {
-    margin: 0; }
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: 1.2px; }
+  footer p:first-child {
+    font-size: 1.4rem; }
   footer span.curly {
-    font-family: "Lobster", cursive;
-    letter-spacing: 1.3px; }
+    letter-spacing: 1.2px;
+    color: #d6d6d6; }
     @media (max-width: 480px) {
       footer span.curly {
         display: block; } }
   footer a {
     text-decoration: none;
-    color: #004E48;
+    color: #d6d6d6;
     transition: all 0.3s ease-out; }
   footer a:hover {
-    color: #E96A09; }
+    color: #800006; }
 
 .page-wrap {
   min-height: 100%;

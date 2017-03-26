@@ -53,22 +53,25 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 	display:flex;
 	justify-content:center;
 	margin-bottom: 30px;
-	@include bp('sml') {
+	@include bp('med') {
 		flex-direction:column;
 		align-items:center;
 	}
 	label {
 		transition: all 0.1s ease-out;
-		padding:10px;
+		padding:10px 30px;
 		border: 2px solid transparent;
 		background: $deepBlue;
 		border-radius: 10px;
 		color: $white;
 		letter-spacing: 1.2px;
-		font-size: 1.4rem;
+		font-size: 1.8rem;
 		transition: all 0.3s ease-in;
 		&:hover {
 			background: darken($deepBlue, 5);
+		}
+		span {
+			font-style: italic;
 		}
 	}
 	input[name=firstChoice]{
@@ -76,10 +79,18 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 		transition: all 0.1s ease-in;
 	}
 	#userChooseDrink:checked ~ label[for=userChooseDrink] {
-		border: 2px solid $deepRed;
+		border: 2px solid darken($deepBlue, 5);
 	}
 	#userChooseMedia:checked ~ label[for=userChooseMedia]{
-		border: 2px solid $deepRed;
+		border: 2px solid lighten($deepBlue, 5);
+	}
+}
+
+.firstDecision label:nth-child(2) {
+	margin-right: 30px;
+	@include bp('med') {
+		margin-right: 0;
+		margin-bottom:20px;
 	}
 }
 
@@ -92,7 +103,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 .getBooze input[type=text]{
 	@include inputStrip();
 	background: $white;
-	padding:15px 5px;
+	padding:15px 10px;
 	width:350px;
 	font-size: 1.8rem;
 	color: $blackish;
@@ -110,7 +121,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 
 #searchMedia {
 	@include buttonStyle($white, $darkGrey);
-	padding: 15px 5px;
+	padding: 15px;
 	font-size: 1.8rem;
 	margin: 50px 0 20px 0;
 }
@@ -195,9 +206,10 @@ ul.chooseTheBooze {
 
 #getBoozeSubmit, #getMediaSubmit {
 	@include buttonStyle($white, $deepBlue);
-	font-size: 2.4rem;
+	font-size: 1.8rem;
+	letter-spacing: 1.2px;
 	border-radius: 10px;
-	padding:10px;
+	padding:10px 30px;
 	margin-bottom: 75px;
 	transition: all 0.3s ease-in;
 	&:hover {
@@ -302,6 +314,7 @@ ul.chooseTheBooze {
 	max-width: 50%;
 	background: $grey;
 	border-radius: 10px;
+	padding-bottom: 20px;
 	@include bp('lrg') {
 		max-width: 80%;
 	}

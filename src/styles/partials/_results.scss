@@ -8,6 +8,7 @@
 	// max-width: 80%;
 	// margin: 0 auto;
 	margin-left: 100px;
+	margin-bottom: 80px;
 	@include bp('lrg') {
 		margin-left:0;
 	}
@@ -72,7 +73,7 @@ div.grid-item img {
 	display: flex;
 	justify-content: center;
 	align-items:center;
-	margin-left: 40px;
+	margin-left: 60px;
 	padding: 40px 0;
 	@include bp('med') {
 		margin-left:0;
@@ -107,10 +108,11 @@ div.grid-item img {
 }
 
 .userMedia__header h3 {
-	color: $deepBlue;
-	font-size: 3rem;
+	color: $blackish;
+	font-size: 2.6rem;
+	letter-spacing: 1.8px;
 	@include bp('lrg'){
-		font-size: 2.6rem;
+		font-size: 2.4rem;
 	}
 	@include bp('med') {
 		font-size: 1.6rem;
@@ -179,7 +181,8 @@ h5 span.mediaChoice {
 	align-items: center;
 	padding: 10px 5px 5px 5px;
 	text-align: center;
-	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 42%,rgba(255,255,255,1) 58%,rgba(214,214,214,0.99) 81%,rgba(214,214,214,0.99) 98%,rgba(214,214,214,0.99) 100%);
+	background: white;
+	// background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 42%,rgba(255,255,255,1) 58%,rgba(214,214,214,0.99) 81%,rgba(214,214,214,0.99) 98%,rgba(214,214,214,0.99) 100%);
 	@include bp('lrg') {
 		width:48%;
 		background: white;
@@ -197,6 +200,7 @@ h5 span.mediaChoice {
 	font-size: 2rem;
 	font-family: $sanSerif;
 	color: $blackish;	
+	margin: 20px 0;
 }
 
 .boozeResultItem h4 {
@@ -215,12 +219,15 @@ h5 span.mediaChoice {
 }
 .boozeResultItem .imageContain {
 	max-width: 50%;
+	flex-shrink: 0;
 }
 
 .boozeResultItem .containText {
 	text-align: center;
+	padding-right: 20px;
 	p {
 		margin:0;
+		line-height: 1.4;
 		color: $blackish;
 	}
 }
