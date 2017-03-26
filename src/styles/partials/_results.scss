@@ -60,6 +60,7 @@ div.grid-item img {
 	padding:10px;
 	font-size: 1.5rem;
 	letter-spacing: 1.4px;
+	transition: all 0.3s ease-in;
 	a {
 		color:white;
 		text-decoration: none;
@@ -111,6 +112,10 @@ div.grid-item img {
 	color: $blackish;
 	font-size: 2.6rem;
 	letter-spacing: 1.8px;
+	.starRating {
+		letter-spacing: 8px;
+		color: $deepRed;
+	}
 	@include bp('lrg'){
 		font-size: 2.4rem;
 	}
@@ -198,14 +203,15 @@ h5 span.mediaChoice {
 
 .boozeResultItem h3 {
 	font-size: 2rem;
-	font-family: $sanSerif;
-	color: $blackish;	
+	font-family: $netflix;
+	color: $blackish;
+	letter-spacing: 1.2px;	
 	margin: 20px 0;
 }
 
 .boozeResultItem h4 {
 	font-size: 1.8rem;
-	font-family: $cursive;
+	font-family: $sanSerif;
 	letter-spacing: 1.5px;
 	color: $deepBlue;
 }
@@ -226,7 +232,7 @@ h5 span.mediaChoice {
 	text-align: center;
 	padding-right: 20px;
 	p {
-		margin:0;
+		margin:20px 0;
 		line-height: 1.4;
 		color: $blackish;
 	}

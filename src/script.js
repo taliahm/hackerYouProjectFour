@@ -173,6 +173,14 @@ spillApp.showMediaToChoose = function(array) {
 		});
 		
 		movieFilter.forEach(function(item){
+			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let image = '';
+			if(item.poster_path != null) {
+				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
+				console.log('image exsists')
+			}
+			else { image = noImage;
+					 console.log('no image')}
 			let listItem = `<input 
 									type=radio 
 									id=${item.id} 
@@ -184,7 +192,7 @@ spillApp.showMediaToChoose = function(array) {
 							<div class='resultItem'>
 								<label for=${item.id}>
 									<div class="imageContain">
-										<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">
+										${image}
 									</div>
 									<h5>${item[movieTitle]}</h5>
 								</label>
@@ -200,6 +208,14 @@ spillApp.showMediaToChoose = function(array) {
 		let headerText = `<h4>Was this what you were looking for?</h4>`
 		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
+			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let image = '';
+			if(item.poster_path != null) {
+				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
+				console.log('image exsists')
+			}
+			else { image = noImage;
+					 console.log('no image')}
 			let listItem = `
 								<input 
 										type=radio 
@@ -212,7 +228,7 @@ spillApp.showMediaToChoose = function(array) {
 							<div class='resultItem'>
 								<label for=${item.id}>
 									<div class="imageContain">
-										<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">
+										${image}
 									</div>
 									<h5>${item[tvTitle]}</h5>
 								</label>
@@ -224,6 +240,14 @@ spillApp.showMediaToChoose = function(array) {
 			$('.chooseTheBooze').show();
 		});
 		movieFilter.forEach(function(item){
+			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let image = '';
+			if(item.poster_path != null) {
+				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
+				console.log('image exsists')
+			}
+			else { image = noImage;
+					 console.log('no image')}
 			let listItem = `
 								<input 
 										type=radio 
@@ -236,7 +260,7 @@ spillApp.showMediaToChoose = function(array) {
 							<div class='resultItem'>
 								<label for=${item.id}>
 									<div class="imageContain">
-										<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">
+										${image}
 									</div>
 									<h5>${item[movieTitle]}</h5>
 								</label>
@@ -263,28 +287,33 @@ spillApp.gsapInit = () => {
 	const barFive = $('.animateFive')
 	const barSix = $('.animateSix')
 	const barSeven = $('.animateSeven')
-	spillApp.timeline = new TimelineMax({paused: true})
+	spillApp.timeline = new TimelineMax({paused: true, onComplete:function() {
+		this.restart();
+	}})
 	spillApp.timeline 
-		.to(barOne, 0.5, {backgroundColor: 'purple'}, 1)
-		.to(barFour, 0.5, {backgroundColor: 'cyan'}, 1)
-		.to(barTwo, 0.5, {backgroundColor: 'green'}, 1.5)
-		.to(barFive, 0.5, {backgroundColor: 'blue'}, 1.5)
-		.to(barFour, 0.5, {backgroundColor: 'yellow'}, 2)
+		.to(barOne, 0.5, {backgroundColor: 'purple', ease:Power1.easeIn}, 0)
+		.to(barFour, 0.5, {backgroundColor: 'cyan', ease:Power1.easeIn}, 0)
+		.to(barTwo, 0.5, {backgroundColor: 'green', ease:Power1.easeIn}, 0.5)
+		.to(barFive, 0.5, {backgroundColor: 'blue', ease:Power1.easeIn}, 0.5)
+		.to(barFour, 0.5, {backgroundColor: 'yellow', ease:Power1.easeIn}, 1)
+		.to(barSeven, 0.5, {backgroundColor: 'pink', ease:Power1.easeIn}, 1)
+		.to(barSix, 0.5, {backgroundColor: 'red', ease:Power1.easeIn}, 1.5)
 		// .to(barFive, 0.5, {backgroundColor: 'red'}, 2)
 }
 //ANIMATION
 spillApp.animation = function(){
 	console.log('animation running')
 	$('.chooseFirstOption').hide();
+	spillApp.timeline.play();
 	$('.animatedSquare').addClass('animatedSquareShow');
 
-	spillApp.timeline.play()
 	// const animatedItem = $('.animatedSquare');
 	// var tween = TweenLite.to(animatedItem, 5, {x:300px});	
 };
 
 spillApp.stopAnimation = function() {
 	$('.animatedSquare').removeClass('animatedSquareShow');
+	spillApp.timeline.stop();
 	console.log('animation OVER')
 }
 
@@ -398,11 +427,11 @@ spillApp.displayComparitiveMedia = function(result){
 	var stars = '';
 	if (rating < 4){ 
 			ratingMessage = 'Maybe pick a couple options...'
-			stars = `<i class="fa fa-star" aria-hidden="true"></i>`}
+			stars = `<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i></span>`}
 	else if (rating > 4.1 && rating < 7.1){ratingMessage = 'Looks good!'
-			stars = `<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>`}
+			stars = `<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>`}
 	else if (rating >= 7.1){ratingMessage = 'Good stuff!'
-			 stars = `<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>`}
+			 stars = `<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>`}
 	let userMessage = `<div class="userMedia__header">
 							<h2>We've found some pairings for your choice!</h2>
 							<h3>Rating: ${stars}</h3>

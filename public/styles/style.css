@@ -144,7 +144,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 .title h1 {
   margin: 0;
   color: #F5F5F5;
-  font-family: "Lobster", cursive;
+  font-family: "Josefin Sans", sans-serif;
   letter-spacing: 1.4px;
   font-size: 8rem; }
   .title h1 .upper {
@@ -348,13 +348,13 @@ ul.chooseTheBooze {
   text-align: center; }
   @media (max-width: 480px) {
     .getMedia label {
-      margin: 5px 20px; } }
+      margin: 5px 0; } }
 
 .getMedia label .imageContain {
   max-width: 50%; }
   @media (max-width: 480px) {
     .getMedia label .imageContain {
-      max-width: 100%; } }
+      max-width: 70%; } }
 
 .getMedia label .imageContain.imageContain--small {
   max-width: 30%; }
@@ -378,6 +378,9 @@ ul.chooseTheBooze {
   margin-top: 10px;
   color: #800006;
   transition: all 0.3s ease-in; }
+  @media (max-width: 767px) {
+    .getMedia label h5 {
+      font-size: 1.4rem; } }
 
 .getYourBooze {
   margin-top: 40px; }
@@ -463,8 +466,8 @@ ul.manyOptions {
   text-align: center;
   transition: all 0.3s ease-out; }
   .resultItem h5 {
-    font-size: 1.5rem;
-    color: #800006;
+    font-size: 1.6rem;
+    color: #F5F5F5;
     letter-spacing: 1.3px; }
   .resultItem div.imageContain {
     max-width: 45%;
@@ -531,7 +534,8 @@ div.grid-item img {
   border-radius: 10px;
   padding: 10px;
   font-size: 1.5rem;
-  letter-spacing: 1.4px; }
+  letter-spacing: 1.4px;
+  transition: all 0.3s ease-in; }
   .topBar .reload a {
     color: white;
     text-decoration: none; }
@@ -575,6 +579,9 @@ div.grid-item img {
   color: #101010;
   font-size: 2.6rem;
   letter-spacing: 1.8px; }
+  .userMedia__header h3 .starRating {
+    letter-spacing: 8px;
+    color: #800006; }
   @media (max-width: 940px) {
     .userMedia__header h3 {
       font-size: 2.4rem; } }
@@ -644,13 +651,14 @@ h5 span.mediaChoice {
 
 .boozeResultItem h3 {
   font-size: 2rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #101010;
+  letter-spacing: 1.2px;
   margin: 20px 0; }
 
 .boozeResultItem h4 {
   font-size: 1.8rem;
-  font-family: "Lobster", cursive;
+  font-family: "Josefin Sans", sans-serif;
   letter-spacing: 1.5px;
   color: #004E48; }
 
@@ -669,7 +677,7 @@ h5 span.mediaChoice {
   text-align: center;
   padding-right: 20px; }
   .boozeResultItem .containText p {
-    margin: 0;
+    margin: 20px 0;
     line-height: 1.4;
     color: #101010; }
 
@@ -790,7 +798,7 @@ footer {
   display: block; }
 
 footer, .page-wrap:after {
-  height: 70px; }
+  min-height: 70px; }
 
 .animatedSquare {
   display: none; }

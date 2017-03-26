@@ -173,7 +173,16 @@ spillApp.showMediaToChoose = function (array) {
 		});
 
 		movieFilter.forEach(function (item) {
-			var listItem = '<input \n\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
+			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var image = '';
+			if (item.poster_path != null) {
+				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
+				console.log('image exsists');
+			} else {
+				image = noImage;
+				console.log('no image');
+			}
+			var listItem = '<input \n\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
 			$('.manyOptions').append(elemString);
 			$('.boozeFormPartTwo').show();
@@ -183,7 +192,16 @@ spillApp.showMediaToChoose = function (array) {
 		var _headerText = '<h4>Was this what you were looking for?</h4>';
 		$('.headerText').append(_headerText);
 		tvFilter.forEach(function (item) {
-			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[tvTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="tv" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[tvTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
+			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var image = '';
+			if (item.poster_path != null) {
+				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
+				console.log('image exsists');
+			} else {
+				image = noImage;
+				console.log('no image');
+			}
+			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[tvTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="tv" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[tvTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
 			// let elemString = image + listItem;
 			$('.manyOptions').append(elemString);
@@ -191,7 +209,16 @@ spillApp.showMediaToChoose = function (array) {
 			$('.chooseTheBooze').show();
 		});
 		movieFilter.forEach(function (item) {
-			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
+			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var image = '';
+			if (item.poster_path != null) {
+				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
+				console.log('image exsists');
+			} else {
+				image = noImage;
+				console.log('no image');
+			}
+			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
 			$('.manyOptions').append(elemString);
 			$('.boozeFormPartTwo').show();
@@ -213,23 +240,26 @@ spillApp.gsapInit = function () {
 	var barFive = $('.animateFive');
 	var barSix = $('.animateSix');
 	var barSeven = $('.animateSeven');
-	spillApp.timeline = new TimelineMax({ paused: true });
-	spillApp.timeline.to(barOne, 0.5, { backgroundColor: 'purple' }, 1).to(barFour, 0.5, { backgroundColor: 'cyan' }, 1).to(barTwo, 0.5, { backgroundColor: 'green' }, 1.5).to(barFive, 0.5, { backgroundColor: 'blue' }, 1.5).to(barFour, 0.5, { backgroundColor: 'yellow' }, 2);
+	spillApp.timeline = new TimelineMax({ paused: true, onComplete: function onComplete() {
+			this.restart();
+		} });
+	spillApp.timeline.to(barOne, 0.5, { backgroundColor: 'purple', ease: Power1.easeIn }, 0).to(barFour, 0.5, { backgroundColor: 'cyan', ease: Power1.easeIn }, 0).to(barTwo, 0.5, { backgroundColor: 'green', ease: Power1.easeIn }, 0.5).to(barFive, 0.5, { backgroundColor: 'blue', ease: Power1.easeIn }, 0.5).to(barFour, 0.5, { backgroundColor: 'yellow', ease: Power1.easeIn }, 1).to(barSeven, 0.5, { backgroundColor: 'pink', ease: Power1.easeIn }, 1).to(barSix, 0.5, { backgroundColor: 'red', ease: Power1.easeIn }, 1.5);
 	// .to(barFive, 0.5, {backgroundColor: 'red'}, 2)
 };
 //ANIMATION
 spillApp.animation = function () {
 	console.log('animation running');
 	$('.chooseFirstOption').hide();
+	spillApp.timeline.play();
 	$('.animatedSquare').addClass('animatedSquareShow');
 
-	spillApp.timeline.play();
 	// const animatedItem = $('.animatedSquare');
 	// var tween = TweenLite.to(animatedItem, 5, {x:300px});	
 };
 
 spillApp.stopAnimation = function () {
 	$('.animatedSquare').removeClass('animatedSquareShow');
+	spillApp.timeline.stop();
 	console.log('animation OVER');
 };
 
@@ -328,13 +358,13 @@ spillApp.displayComparitiveMedia = function (result) {
 	var stars = '';
 	if (rating < 4) {
 		ratingMessage = 'Maybe pick a couple options...';
-		stars = '<i class="fa fa-star" aria-hidden="true"></i>';
+		stars = '<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i></span>';
 	} else if (rating > 4.1 && rating < 7.1) {
 		ratingMessage = 'Looks good!';
-		stars = '<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>';
+		stars = '<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>';
 	} else if (rating >= 7.1) {
 		ratingMessage = 'Good stuff!';
-		stars = '<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>';
+		stars = '<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>';
 	}
 	var userMessage = '<div class="userMedia__header">\n\t\t\t\t\t\t\t<h2>We\'ve found some pairings for your choice!</h2>\n\t\t\t\t\t\t\t<h3>Rating: ' + stars + '</h3>\n\t\t\t\t\t\t\t<h3>' + ratingMessage + '</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="fullContain">\n\t\t\t\t\t\t\t<div class="imgContain">\n\t\t\t\t\t\t\t \t<img src="' + spillApp.posterURL + mediaPoster + '">\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t</div>';
 	// console.log(userMessage);
