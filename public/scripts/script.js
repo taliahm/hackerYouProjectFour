@@ -195,10 +195,26 @@ spillApp.showMediaToChoose = function (array) {
 	}
 };
 
+spillApp.gsapInit = function () {
+	var barOne = $('.animateOne');
+	var barTwo = $('.animateTwo');
+	spillApp.timeline = new TimelineMax({ paused: true });
+	spillApp.timeline.to(barOne, 1, { backgroundColor: 'purple' }, 1).to(barOne, 1, { backgroundColor: 'green' }, 2);
+};
+//ANIMATION
 spillApp.animation = function () {
+	console.log('animation running');
 	$('.chooseFirstOption').hide();
-	var animatedItem = $('.animatedSquare');
+	$('.animatedSquare').addClass('animatedSquareShow');
+
+	spillApp.timeline.play();
+	// const animatedItem = $('.animatedSquare');
 	// var tween = TweenLite.to(animatedItem, 5, {x:300px});	
+};
+
+spillApp.stopAnimation = function () {
+	$('.animatedSquare').removeClass('animatedSquareShow');
+	console.log('animation OVER');
 };
 
 spillApp.submitGetBooze = function () {
@@ -352,7 +368,7 @@ spillApp.events = function () {
 };
 
 spillApp.displayResults = function (array) {
-	// console.log(array);
+	spillApp.stopAnimation();
 	$('.grid').empty();
 	for (item in array) {
 		// console.log(array);
@@ -376,6 +392,7 @@ spillApp.displayResults = function (array) {
 		$('.grid').append(finalDiv);
 		spillApp.asyncFunctionGetBooze(array, item);
 	}
+
 	$('.results').show();
 };
 
@@ -504,6 +521,7 @@ spillApp.reset = function () {
 spillApp.init = function () {
 	$('.results').hide();
 	spillApp.events();
+	spillApp.gsapInit();
 }; //end of init();
 
 $(function () {

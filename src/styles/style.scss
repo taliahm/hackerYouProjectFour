@@ -83,3 +83,70 @@ footer, .page-wrap:after {
 }
 
 
+.animatedSquare {
+	display: none;
+}
+
+.animatedSquareShow {
+	display: flex;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	background: $blackish;
+	z-index: 130;
+}
+
+.container {
+  background: $blackish;
+  max-width: 50%;
+  margin: auto;
+}
+.row {
+  display:flex;
+  justify-content:center;
+}
+.tall {
+  height: 300px;
+}
+
+.medium {
+  height: 40px;
+  background: black;
+}
+
+.container h4 {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+.short {
+  height: 20px;
+}
+
+.bar {
+  width: 75px;
+}
+
+.blue {
+  background: blue;
+}
+.red {
+  background: red;
+}
+.pink {
+  background: pink;
+}
+.green {
+  background: green;
+}
+.cyan {
+  background: cyan;
+}
+.yellow {
+  background: yellow;
+}
+.white {
+  background: white;
+}
