@@ -189,7 +189,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
     visibility: hidden;
     transition: all 0.1s ease-in; }
   .firstDecision #userChooseDrink:checked ~ label[for=userChooseDrink] {
-    border: 2px solid #003530; }
+    border: 2px solid #006860; }
   .firstDecision #userChooseMedia:checked ~ label[for=userChooseMedia] {
     border: 2px solid #006860; }
 
@@ -219,7 +219,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   margin: 50px 0 20px 0; }
   @media (max-width: 767px) {
     .getBooze input[type=text] {
-      width: 280px; } }
+      width: 250px; } }
 
 .getBooze input[type=text]::-webkit-input-placeholder {
   color: #068F85; }
@@ -718,7 +718,7 @@ h5 span.mediaChoice {
       max-width: 50%;
       background: white; } }
   .resultMediaContain .overlay h4 {
-    color: #004E48;
+    color: #008177;
     margin-bottom: 20px; }
     @media (max-width: 480px) {
       .resultMediaContain .overlay h4 {

@@ -280,7 +280,7 @@ h5 span.mediaChoice {
 		background: white;
 	}
 	h4 {
-		color:$deepBlue;
+		color: lighten($deepBlue, 10);
 		margin-bottom: 20px;
 		@include bp('sml'){
 			font-size: 1.3rem;

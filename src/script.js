@@ -452,10 +452,10 @@ spillApp.firstDecision = ()=>{
 		$('.boozeForm').hide();
 		$('.boozeFormPartTwo').hide();
 		if($('#userChooseMedia').is(':checked')){
-			$('.boozeForm').show();
+			$('.boozeForm').fadeIn();
 		}
 		else if ($('#userChooseDrink').is(':checked')) {
-			$('.getMedia').show();
+			$('.getMedia').fadeIn();
 		}
 	});
 }; // end of firstDecision();

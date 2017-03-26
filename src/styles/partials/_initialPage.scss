@@ -79,7 +79,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 		transition: all 0.1s ease-in;
 	}
 	#userChooseDrink:checked ~ label[for=userChooseDrink] {
-		border: 2px solid darken($deepBlue, 5);
+		border: 2px solid lighten($deepBlue, 5);
 	}
 	#userChooseMedia:checked ~ label[for=userChooseMedia]{
 		border: 2px solid lighten($deepBlue, 5);
@@ -111,7 +111,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 	box-shadow: 2px 2px 1px darken($darkGrey, 5);
 	margin:50px 0 20px 0;
 	@include bp('med'){
-		width:280px;
+		width:250px;
 	}
 }
 
