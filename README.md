@@ -1,2 +1,2 @@
-#App uses several ajax calls to MovieDB and LCBODB
-#Please get your own API keys
+# Project built using the Movie DB API and the LCBO DB API
+Please get your own API keys
