@@ -418,10 +418,12 @@ spillApp.getComparativeMedia = function(array){
 
 spillApp.displayComparitiveMedia = function(result){
 	console.log(result);
-	if (result.poster_path !== null) {
-		var mediaPoster = result.poster_path; 
-		}
-	else {var mediaPoster = result.title};
+	let imagePath = ''
+	if(result.poster_path !== null) {
+		imagePath = `${spillApp.posterURL}${result.poster_path}`
+	}
+	else { imagePath = '../images/noImage.jpg';}
+
 	var rating = result.vote_average;
 	var ratingMessage;
 	var stars = '';
@@ -439,7 +441,7 @@ spillApp.displayComparitiveMedia = function(result){
 						</div>
 						<div class="fullContain">
 							<div class="imgContain">
-							 	<img src="${spillApp.posterURL}${mediaPoster}">
+							 	<img src="${imagePath}">
 							 </div>
 						</div>`;
 	// console.log(userMessage);
@@ -659,7 +661,7 @@ spillApp.initPackeryGetBooze = function(){
 		  columnWidth: '.grid-sizerOne',
 		  percentPosition: true,
 		  imagesLoaded: true,
-		  gutter: 20
+		  gutter: 17
 	});
 	grid.imagesLoaded().progress(function() {
  		 grid.packery();

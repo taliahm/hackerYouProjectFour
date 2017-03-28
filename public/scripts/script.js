@@ -348,11 +348,13 @@ spillApp.getComparativeMedia = function (array) {
 
 spillApp.displayComparitiveMedia = function (result) {
 	console.log(result);
+	var imagePath = '';
 	if (result.poster_path !== null) {
-		var mediaPoster = result.poster_path;
+		imagePath = '' + spillApp.posterURL + result.poster_path;
 	} else {
-		var mediaPoster = result.title;
-	};
+		imagePath = '../images/noImage.jpg';
+	}
+
 	var rating = result.vote_average;
 	var ratingMessage;
 	var stars = '';
@@ -366,7 +368,7 @@ spillApp.displayComparitiveMedia = function (result) {
 		ratingMessage = 'Good stuff!';
 		stars = '<span class="starRating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></span>';
 	}
-	var userMessage = '<div class="userMedia__header">\n\t\t\t\t\t\t\t<h2>We\'ve found some pairings for your choice!</h2>\n\t\t\t\t\t\t\t<h3>Rating: ' + stars + '</h3>\n\t\t\t\t\t\t\t<h3>' + ratingMessage + '</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="fullContain">\n\t\t\t\t\t\t\t<div class="imgContain">\n\t\t\t\t\t\t\t \t<img src="' + spillApp.posterURL + mediaPoster + '">\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t</div>';
+	var userMessage = '<div class="userMedia__header">\n\t\t\t\t\t\t\t<h2>We\'ve found some pairings for your choice!</h2>\n\t\t\t\t\t\t\t<h3>Rating: ' + stars + '</h3>\n\t\t\t\t\t\t\t<h3>' + ratingMessage + '</h3>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="fullContain">\n\t\t\t\t\t\t\t<div class="imgContain">\n\t\t\t\t\t\t\t \t<img src="' + imagePath + '">\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t</div>';
 	// console.log(userMessage);
 	$('.userMedia').append(userMessage);
 };
@@ -554,7 +556,7 @@ spillApp.initPackeryGetBooze = function () {
 		columnWidth: '.grid-sizerOne',
 		percentPosition: true,
 		imagesLoaded: true,
-		gutter: 20
+		gutter: 17
 	});
 	grid.imagesLoaded().progress(function () {
 		grid.packery();
