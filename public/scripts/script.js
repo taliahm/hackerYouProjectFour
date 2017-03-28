@@ -399,14 +399,22 @@ spillApp.captureDecision = function () {
 spillApp.captureOtherDecision = function () {
 	$('#getMediaSubmit').on('click', function (e) {
 		e.preventDefault();
-		if ($('#userChooseDrink').is(':checked') && $('input[name=mediaType]').is(':checked')) {
+		var userChooseDrink = $('#userChooseDrink').is(':checked');
+		var drinkRadio = $('input[name=chooseBooze]').is(':checked');
+		var mediaRadio = $('input[name=mediaType]').is(':checked');
+		if (userChooseDrink === true && drinkRadio === true && mediaRadio === true) {
 			$('.chooseFirstOption').hide();
 			spillApp.userBoozeResult = $('input[name=chooseBooze]:checked').val();
 			spillApp.userMediaChoice = $('input[name=mediaType]:checked').val();
 			spillApp.discoverMedia(spillApp.userMediaChoice);
-			// console.log(spillApp.userBoozeResult);
 		} else {
-			alert('Come on, pick a content type.');
+			swal({
+				title: "Oops!",
+				text: "Please pick a content type and an alcohol to continue.",
+				type: "warning",
+				confirmButtonColor: "#004E48",
+				confirmButtonText: "No problem!"
+			});
 		}
 	});
 }; //end of captureOtherDecision();

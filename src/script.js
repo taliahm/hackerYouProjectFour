@@ -475,15 +475,25 @@ spillApp.captureDecision = () => {
 spillApp.captureOtherDecision = function(){	
 	$('#getMediaSubmit').on('click', function(e){
 		e.preventDefault();
-		if($('#userChooseDrink').is(':checked') && $('input[name=mediaType]').is(':checked')) {
+		const userChooseDrink = $('#userChooseDrink').is(':checked');
+		const drinkRadio = $('input[name=chooseBooze]').is(':checked');
+		const mediaRadio = $('input[name=mediaType]').is(':checked');
+		if(userChooseDrink === true && drinkRadio === true && mediaRadio === true) {
 			$('.chooseFirstOption').hide();
 			spillApp.userBoozeResult = $('input[name=chooseBooze]:checked').val();
 			spillApp.userMediaChoice = $('input[name=mediaType]:checked').val();
 			spillApp.discoverMedia(spillApp.userMediaChoice);
-			// console.log(spillApp.userBoozeResult);
 			}
-		else {alert('Come on, pick a content type.')}
-		})
+		else {
+			swal({
+			  title: "Oops!",
+			  text: "Please pick a content type and an alcohol to continue.",
+			  type: "warning",
+			  confirmButtonColor: "#004E48",
+			  confirmButtonText: "No problem!",
+			})	
+		}
+	})
 }//end of captureOtherDecision();
 
 spillApp.events = function() {
