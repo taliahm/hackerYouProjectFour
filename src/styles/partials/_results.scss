@@ -67,6 +67,7 @@ div.grid-item img {
 	margin-bottom: 40px;
 	padding: 20px 10px;
 	position: relative;
+	width:100%;
 	@include bp('med') {
 		flex-direction:column;
 	}
@@ -333,7 +334,7 @@ h5 span.mediaChoice {
 		color: lighten($deepBlue, 10);
 		margin-bottom: 20px;
 		@include bp('sml'){
-			font-size: 1.3rem;
+			font-size: 1.8rem;
 		}
 	}
 	p {

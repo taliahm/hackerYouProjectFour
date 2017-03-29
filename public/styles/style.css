@@ -542,7 +542,8 @@ div.grid-item img {
   background: #d6d6d6;
   margin-bottom: 40px;
   padding: 20px 10px;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   @media (max-width: 767px) {
     .topBar {
       flex-direction: column; } }
@@ -773,7 +774,7 @@ h5 span.mediaChoice {
     margin-bottom: 20px; }
     @media (max-width: 480px) {
       .resultMediaContain .overlay h4 {
-        font-size: 1.3rem; } }
+        font-size: 1.8rem; } }
   .resultMediaContain .overlay p {
     margin: 0;
     font-size: 1.4rem;
