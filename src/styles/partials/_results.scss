@@ -18,12 +18,18 @@
 	@include bp('xlrg') {
 		margin-left:20px;
 	}
+	@include bp('sml') {
+		margin-left:0;
+	}
 }
 
 .gutterOne {
 	width: 5%;
-	@include bp(xlrg) {
+	@include bp('xlrg') {
 		width: 2%;
+	}
+	@include bp('sml') {
+		width:0;
 	}
 }
 
@@ -39,6 +45,9 @@ div.grid-sizerOne {
 	@include bp('lrg') {
 		width:48%;
 	}
+	@include bp('sml') {
+		width: 100%;
+	}
 }
 
 //For Movie/TV results
@@ -53,7 +62,7 @@ div.grid-item img {
 }
 
 .topBar {
-	display: flex;
+	display: none;
 	background: $grey;
 	margin-bottom: 40px;
 	padding: 20px 10px;
@@ -61,6 +70,10 @@ div.grid-item img {
 	@include bp('med') {
 		flex-direction:column;
 	}
+}
+
+.topBarShow {
+	display: flex;
 }
 
 .topBar .reset {
@@ -220,6 +233,7 @@ h5 span.mediaChoice {
 	}
 	@include bp('sml') {
 		width: 100%;
+		padding:0;
 	}
 }
 
@@ -240,6 +254,13 @@ h5 span.mediaChoice {
 	font-family: $sanSerif;
 	letter-spacing: 1.5px;
 	color: $deepBlue;
+}
+
+.boozeResultItem .underText {
+	color: $blackish;
+	line-height: 1.2;
+	padding: 5px;
+	font-size: 1.4rem;
 }
 
 .boozeResultItem .contain {

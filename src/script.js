@@ -506,7 +506,7 @@ spillApp.displayResults = function(array) {
 			if(array[item].tasting_note !== null){
 			var tasting = array[item].tasting_note;
 			}
-			else {var tasting = "Tastes great!"}
+			else {var tasting = " "}
 			if (array[item].style !== null){
 				var tagLine = array[item].style;
 			}
@@ -518,10 +518,12 @@ spillApp.displayResults = function(array) {
 							  		</div>
 								  	<div class="containText">
 								  		<h4>${tagLine}</h4>
-								  		<p>${tasting}</p>
 								  		<p> Alcohal Content: ${alcContent} </p>
 								  	</div>
-							  	</div>`
+							  	</div>
+						  	  	<div class="underText">
+						  			<p>${tasting}</p>
+						  	  	</div>`
 			var finalDiv = $('<div>').addClass('grid-item boozeResultItem').append(togetherEl);
 			// console.log(finalDiv);
 		
@@ -597,11 +599,13 @@ spillApp.displayMedia = function(array){
 
 //This Sequence loads Packery in the correct order
 spillApp.callbackGetBooze = function() { 
+	$('.topBar').addClass('topBarShow');
 	$('.results').show();
 	spillApp.initPackeryGetBooze();
 	}
 
 	spillApp.callbackGetContent = function() { 
+		$('.topBar').addClass('topBarShow');
 		$('.results').show();
 		spillApp.initPackeryGetContent();
 		}

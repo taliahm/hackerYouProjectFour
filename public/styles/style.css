@@ -504,12 +504,18 @@ ul.manyOptions {
   @media (max-width: 1200px) {
     .grid {
       margin-left: 20px; } }
+  @media (max-width: 480px) {
+    .grid {
+      margin-left: 0; } }
 
 .gutterOne {
   width: 5%; }
   @media (max-width: 1200px) {
     .gutterOne {
       width: 2%; } }
+  @media (max-width: 480px) {
+    .gutterOne {
+      width: 0; } }
 
 div.grid-item {
   box-shadow: 1px 1px 3px #939393; }
@@ -520,6 +526,9 @@ div.grid-sizerOne {
   @media (max-width: 940px) {
     div.grid-sizerOne {
       width: 48%; } }
+  @media (max-width: 480px) {
+    div.grid-sizerOne {
+      width: 100%; } }
 
 div.gridsizerTwo {
   height: auto; }
@@ -529,7 +538,7 @@ div.grid-item img {
   display: block; }
 
 .topBar {
-  display: flex;
+  display: none;
   background: #d6d6d6;
   margin-bottom: 40px;
   padding: 20px 10px;
@@ -537,6 +546,9 @@ div.grid-item img {
   @media (max-width: 767px) {
     .topBar {
       flex-direction: column; } }
+
+.topBarShow {
+  display: flex; }
 
 .topBar .reset {
   flex-shrink: 0; }
@@ -673,7 +685,8 @@ h5 span.mediaChoice {
       background: white; } }
   @media (max-width: 480px) {
     .boozeResultItem {
-      width: 100%; } }
+      width: 100%;
+      padding: 0; } }
 
 .boozeResultItem:hover {
   box-shadow: 1px 1px 6px #939393; }
@@ -690,6 +703,12 @@ h5 span.mediaChoice {
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 1.5px;
   color: #068F85; }
+
+.boozeResultItem .underText {
+  color: #101010;
+  line-height: 1.2;
+  padding: 5px;
+  font-size: 1.4rem; }
 
 .boozeResultItem .contain {
   display: flex;

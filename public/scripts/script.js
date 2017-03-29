@@ -429,14 +429,14 @@ spillApp.displayResults = function (array) {
 		if (array[item].tasting_note !== null) {
 			var tasting = array[item].tasting_note;
 		} else {
-			var tasting = "Tastes great!";
+			var tasting = " ";
 		}
 		if (array[item].style !== null) {
 			var tagLine = array[item].style;
 		} else {
 			var tagLine = 'Yummy!';
 		}
-		var togetherEl = '<h3>' + name + '</h3>\n\t\t\t\t\t\t\t  <div class="contain">\n\t\t\t\t\t\t\t  \t\t<div class="imageContain">\n\t\t\t\t\t\t\t  \t\t\t<img src="' + image + '" alt="' + name + '">\n\t\t\t\t\t\t\t  \t\t</div>\n\t\t\t\t\t\t\t\t  \t<div class="containText">\n\t\t\t\t\t\t\t\t  \t\t<h4>' + tagLine + '</h4>\n\t\t\t\t\t\t\t\t  \t\t<p>' + tasting + '</p>\n\t\t\t\t\t\t\t\t  \t\t<p> Alcohal Content: ' + alcContent + ' </p>\n\t\t\t\t\t\t\t\t  \t</div>\n\t\t\t\t\t\t\t  \t</div>';
+		var togetherEl = '<h3>' + name + '</h3>\n\t\t\t\t\t\t\t  <div class="contain">\n\t\t\t\t\t\t\t  \t\t<div class="imageContain">\n\t\t\t\t\t\t\t  \t\t\t<img src="' + image + '" alt="' + name + '">\n\t\t\t\t\t\t\t  \t\t</div>\n\t\t\t\t\t\t\t\t  \t<div class="containText">\n\t\t\t\t\t\t\t\t  \t\t<h4>' + tagLine + '</h4>\n\t\t\t\t\t\t\t\t  \t\t<p> Alcohal Content: ' + alcContent + ' </p>\n\t\t\t\t\t\t\t\t  \t</div>\n\t\t\t\t\t\t\t  \t</div>\n\t\t\t\t\t\t  \t  \t<div class="underText">\n\t\t\t\t\t\t  \t\t\t<p>' + tasting + '</p>\n\t\t\t\t\t\t  \t  \t</div>';
 		var finalDiv = $('<div>').addClass('grid-item boozeResultItem').append(togetherEl);
 		// console.log(finalDiv);
 
@@ -492,11 +492,13 @@ spillApp.displayMedia = function (array) {
 
 //This Sequence loads Packery in the correct order
 spillApp.callbackGetBooze = function () {
+	$('.topBar').addClass('topBarShow');
 	$('.results').show();
 	spillApp.initPackeryGetBooze();
 };
 
 spillApp.callbackGetContent = function () {
+	$('.topBar').addClass('topBarShow');
 	$('.results').show();
 	spillApp.initPackeryGetContent();
 };
