@@ -175,23 +175,23 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
     transition: all 0.1s ease-out;
     padding: 10px 30px;
     border: 2px solid transparent;
-    background: #004E48;
-    border-radius: 10px;
+    background: #068F85;
+    border-radius: 2px;
     color: #F5F5F5;
     letter-spacing: 1.2px;
     font-size: 1.8rem;
     transition: all 0.3s ease-in; }
     .firstDecision label:hover {
-      background: #003530; }
+      background: #05776e; }
     .firstDecision label span {
       font-style: italic; }
   .firstDecision input[name=firstChoice] {
     visibility: hidden;
     transition: all 0.1s ease-in; }
   .firstDecision #userChooseDrink:checked ~ label[for=userChooseDrink] {
-    border: 2px solid #006860; }
+    border: 2px solid #07a79c; }
   .firstDecision #userChooseMedia:checked ~ label[for=userChooseMedia] {
-    border: 2px solid #006860; }
+    border: 2px solid #07a79c; }
 
 .firstDecision label:nth-child(2) {
   margin-right: 30px; }
@@ -214,8 +214,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   width: 350px;
   font-size: 1.8rem;
   color: #101010;
-  border-radius: 10px 0 0 10px;
-  box-shadow: 2px 2px 1px #868686;
+  border-radius: 2px 0 0 2px;
   margin: 50px 0 20px 0; }
   @media (max-width: 767px) {
     .getBooze input[type=text] {
@@ -230,9 +229,13 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   color: #F5F5F5;
   border: none;
   box-shadow: 2px 2px 1px #868686;
-  padding: 15px;
+  padding: 15px 20px;
   font-size: 1.8rem;
-  margin: 50px 0 20px 0; }
+  margin: 50px 0 20px 0;
+  box-shadow: none;
+  transition: all 0.3s ease-out; }
+  #searchMedia:hover {
+    background-color: #7a7a7a; }
 
 ul.chooseTheBooze {
   display: flex;
@@ -249,7 +252,8 @@ ul.chooseTheBooze {
 .chooseTheBooze h4 {
   font-size: 2.2rem;
   letter-spacing: 1.4px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  text-align: center; }
 
 .chooseTheBooze .containList {
   display: flex;
@@ -274,7 +278,7 @@ ul.chooseTheBooze {
     .chooseTheBooze .containList li:hover img {
       transform: scale(1.1); }
     .chooseTheBooze .containList li:hover h5 {
-      color: #004E48; }
+      color: #068F85; }
   .chooseTheBooze .containList label {
     display: block; }
   .chooseTheBooze .containList h5 {
@@ -303,18 +307,18 @@ ul.chooseTheBooze {
 
 #getBoozeSubmit, #getMediaSubmit {
   background: none;
-  background: #004E48;
+  background: #068F85;
   color: #F5F5F5;
   border: none;
-  box-shadow: 2px 2px 1px #003530;
+  box-shadow: 2px 2px 1px #05776e;
   font-size: 1.8rem;
   letter-spacing: 1.2px;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 10px 30px;
   margin-bottom: 75px;
   transition: all 0.3s ease-in; }
   #getBoozeSubmit:hover, #getMediaSubmit:hover {
-    background: #003530; }
+    background: #05776e; }
 
 .getMedia {
   padding: 0;
@@ -395,7 +399,7 @@ ul.chooseTheBooze {
   margin-bottom: 20px;
   max-width: 50%;
   background: #d6d6d6;
-  border-radius: 10px;
+  border-radius: 2px;
   padding-bottom: 20px; }
   @media (max-width: 940px) {
     .listContain {
@@ -417,7 +421,7 @@ ul.chooseTheBooze {
   align-items: baseline; }
 
 .getMedia .imageContain:hover ~ h5 {
-  color: #004E48; }
+  color: #068F85; }
 
 .getMedia input[name=chooseBooze] {
   display: none; }
@@ -426,10 +430,10 @@ ul.chooseTheBooze {
   display: none; }
 
 .getMedia input[name=chooseBooze]:checked ~ label img {
-  border: 2px solid #004E48; }
+  border: 2px solid #068F85; }
 
 .getMedia input[name=mediaType]:checked ~ label img {
-  border: 2px solid #004E48; }
+  border: 2px solid #068F85; }
 
 .headerText {
   text-align: center;
@@ -487,13 +491,25 @@ ul.manyOptions {
 .resultItem:hover {
   transform: scale(1.05); }
 
+.gridWrapper {
+  margin: 0 auto;
+  max-width: 80%; }
+  @media (max-width: 1200px) {
+    .gridWrapper {
+      max-width: 100%; } }
+
 .grid {
-  max-width: 100%;
-  margin-left: 100px;
-  margin-bottom: 80px; }
-  @media (max-width: 940px) {
+  width: 100%;
+  margin: 20px 20px 80px 0; }
+  @media (max-width: 1200px) {
     .grid {
-      margin-left: 0; } }
+      margin-left: 20px; } }
+
+.gutterOne {
+  width: 5%; }
+  @media (max-width: 1200px) {
+    .gutterOne {
+      width: 2%; } }
 
 div.grid-item {
   box-shadow: 1px 1px 3px #939393; }
@@ -527,11 +543,11 @@ div.grid-item img {
 
 .topBar .reload {
   background: none;
-  background: #004E48;
+  background: #068F85;
   color: #F5F5F5;
   border: none;
-  box-shadow: 2px 2px 1px #003530;
-  border-radius: 10px;
+  box-shadow: 2px 2px 1px #05776e;
+  border-radius: 2px;
   padding: 10px;
   font-size: 1.5rem;
   letter-spacing: 1.4px;
@@ -540,14 +556,18 @@ div.grid-item img {
     color: white;
     text-decoration: none; }
   .topBar .reload:hover {
-    background: #003530; }
+    background: #05776e; }
 
 .topBar .userMedia {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 60px;
+  margin-left: 70px;
   padding: 40px 0; }
+  @media (max-width: 1200px) {
+    .topBar .userMedia {
+      margin-left: 20px;
+      padding: 20px 0; } }
   @media (max-width: 767px) {
     .topBar .userMedia {
       margin-left: 0; } }
@@ -615,12 +635,21 @@ div.grid-item img {
 
 .result {
   width: 7%; }
+  @media (max-width: 767px) {
+    .result {
+      margin-top: 10px; } }
+  @media (max-width: 480px) {
+    .result {
+      width: 12%; } }
   .result img {
     max-width: 100%;
     display: block; }
 
 .userMedia h5 {
   color: #101010; }
+  @media (max-width: 767px) {
+    .userMedia h5 {
+      text-align: center; } }
 
 h5 span.mediaChoice {
   color: #E50914;
@@ -660,7 +689,7 @@ h5 span.mediaChoice {
   font-size: 1.8rem;
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 1.5px;
-  color: #004E48; }
+  color: #068F85; }
 
 .boozeResultItem .contain {
   display: flex;
@@ -689,11 +718,13 @@ h5 span.mediaChoice {
   transition: all 0.3s ease-out; }
   @media (max-width: 767px) {
     .resultMediaContain {
-      display: flex; } }
+      display: flex;
+      background: #F5F5F5; } }
 
 @media (max-width: 767px) {
   .resultMediaContain .imgContain {
-    max-width: 50%; } }
+    max-width: 50%;
+    background: #F5F5F5; } }
 
 .resultMediaContain .overlay {
   position: absolute;
@@ -716,9 +747,10 @@ h5 span.mediaChoice {
       display: flex;
       position: static;
       max-width: 50%;
-      background: white; } }
+      background: #F5F5F5;
+      opacity: 1; } }
   .resultMediaContain .overlay h4 {
-    color: #008177;
+    color: #08c0b3;
     margin-bottom: 20px; }
     @media (max-width: 480px) {
       .resultMediaContain .overlay h4 {
@@ -728,6 +760,9 @@ h5 span.mediaChoice {
     font-size: 1.4rem;
     line-height: 1.3;
     color: #F5F5F5; }
+    @media (max-width: 767px) {
+      .resultMediaContain .overlay p {
+        color: #101010; } }
     @media (max-width: 480px) {
       .resultMediaContain .overlay p {
         font-size: 1.2rem; } }
@@ -768,14 +803,19 @@ h5, h6 {
   font-size: 2.8rem; }
 
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 10px;
-  background: #003530; }
+  background: #05776e; }
+  @media (max-width: 767px) {
+    footer {
+      flex-direction: column;
+      align-items: flex-start; } }
   footer p {
     margin: 0;
     line-height: 1.6;
     letter-spacing: 1.2px; }
-  footer p:first-child {
-    font-size: 1.4rem; }
   footer span.curly {
     letter-spacing: 1.2px;
     color: #d6d6d6; }
@@ -784,21 +824,32 @@ footer {
         display: block; } }
   footer a {
     text-decoration: none;
-    color: #d6d6d6;
+    color: #F5F5F5;
     transition: all 0.3s ease-out; }
   footer a:hover {
     color: #800006; }
 
+@media (max-width: 767px) {
+  .footBox {
+    text-align: left;
+    padding-bottom: 10px; } }
+
+.footBox--rightAlign {
+  text-align: right; }
+  @media (max-width: 767px) {
+    .footBox--rightAlign {
+      text-align: left; } }
+
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -70px; }
+  margin-bottom: -50px; }
 
 .page-wrap:after {
   content: "";
   display: block; }
 
 footer, .page-wrap:after {
-  min-height: 70px; }
+  min-height: 50px; }
 
 .animatedSquare {
   display: none; }
@@ -817,6 +868,9 @@ footer, .page-wrap:after {
   background: #101010;
   max-width: 50%;
   margin: auto; }
+  @media (max-width: 767px) {
+    .container {
+      max-width: 100%; } }
 
 .row {
   display: flex;

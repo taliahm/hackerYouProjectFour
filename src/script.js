@@ -142,15 +142,12 @@ spillApp.showMediaToChoose = function(array) {
 		let headerText = `<h4>Confirm your media selection</h4>`
 		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
-			console.log(item.poster_path)
-			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let noImage = `<img src="/spill/images/noImage.jpg" alt="no movie poster available">`;
 			let image = '';
 			if(item.poster_path != null) {
 				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
-				console.log('image exsists')
 			}
-			else { image = noImage;
-					 console.log('no image')}
+			else { image = noImage; }
 			let listItem = `<input 
 								type=radio 
 								id=${item.id} 
@@ -173,14 +170,12 @@ spillApp.showMediaToChoose = function(array) {
 		});
 		
 		movieFilter.forEach(function(item){
-			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let noImage = `<img src="/spill/images/noImage.jpg" alt="no movie poster available">`;
 			let image = '';
 			if(item.poster_path != null) {
 				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
-				console.log('image exsists')
 			}
-			else { image = noImage;
-					 console.log('no image')}
+			else { image = noImage;}
 			let listItem = `<input 
 									type=radio 
 									id=${item.id} 
@@ -208,14 +203,12 @@ spillApp.showMediaToChoose = function(array) {
 		let headerText = `<h4>Was this what you were looking for?</h4>`
 		$('.headerText').append(headerText)
 		tvFilter.forEach(function(item){
-			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let noImage = `<img src="/spill/images/noImage.jpg" alt="no movie poster available">`;
 			let image = '';
 			if(item.poster_path != null) {
 				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
-				console.log('image exsists')
 			}
-			else { image = noImage;
-					 console.log('no image')}
+			else { image = noImage;}
 			let listItem = `
 								<input 
 										type=radio 
@@ -240,14 +233,12 @@ spillApp.showMediaToChoose = function(array) {
 			$('.chooseTheBooze').show();
 		});
 		movieFilter.forEach(function(item){
-			let noImage = `<img src="../images/noImage.jpg" alt="no movie poster available">`;
+			let noImage = `<img src="/spill/images/noImage.jpg" alt="no movie poster available">`;
 			let image = '';
 			if(item.poster_path != null) {
 				image = `<img src="https://image.tmdb.org/t/p/w300/${item.poster_path}">`
-				console.log('image exsists')
 			}
-			else { image = noImage;
-					 console.log('no image')}
+			else { image = noImage;}
 			let listItem = `
 								<input 
 										type=radio 
@@ -422,7 +413,7 @@ spillApp.displayComparitiveMedia = function(result){
 	if(result.poster_path !== null) {
 		imagePath = `${spillApp.posterURL}${result.poster_path}`
 	}
-	else { imagePath = '../images/noImage.jpg';}
+	else { imagePath = '/spill/images/noImage.jpg';}
 
 	var rating = result.vote_average;
 	var ratingMessage;
@@ -638,13 +629,15 @@ spillApp.itemsProcessed = 0;
 
 spillApp.initPackeryGetContent = function(){
 		$('.grid').prepend(`<div class="gridSizerTwo">`)
+		$('.grid').prepend(`<div class="gutterOne">`)
 		var grid = $('.grid').packery({
 		  itemSelector: '.grid-item',
 		  // rowHeight: `${gridSizer}`,
 		  // columnWidth: `${gridSizer}`,
 		  percentPosition: true,
 		  imagesLoaded: true,
-		  gutter: 20
+		  gutter: '.gutterOne',
+		  // originLeft: false
 	});
 	grid.imagesLoaded().progress(function() {
  		 grid.packery();

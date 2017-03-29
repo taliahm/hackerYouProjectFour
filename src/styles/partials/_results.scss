@@ -3,14 +3,27 @@
 // 	max-width: 1400px;
 // 	margin: 0 auto;
 // }
+
+.gridWrapper {
+	margin: 0 auto;
+	max-width: 80%;
+	@include bp(xlrg) {
+		max-width: 100%;
+	}
+}
 .grid {
-	max-width: 100%;
-	// max-width: 80%;
-	// margin: 0 auto;
-	margin-left: 100px;
-	margin-bottom: 80px;
-	@include bp('lrg') {
-		margin-left:0;
+	width: 100%;
+	// margin-left: 100px;
+	margin:20px 20px 80px 0;
+	@include bp('xlrg') {
+		margin-left:20px;
+	}
+}
+
+.gutterOne {
+	width: 5%;
+	@include bp(xlrg) {
+		width: 2%;
 	}
 }
 
@@ -56,7 +69,7 @@ div.grid-item img {
 
 .topBar .reload {
 	@include buttonStyle($white, $deepBlue);
-	border-radius: 10px;
+	border-radius: 2px;
 	padding:10px;
 	font-size: 1.5rem;
 	letter-spacing: 1.4px;
@@ -74,8 +87,12 @@ div.grid-item img {
 	display: flex;
 	justify-content: center;
 	align-items:center;
-	margin-left: 60px;
+	margin-left: 70px;
 	padding: 40px 0;
+	@include bp(xlrg) {
+		margin-left:20px;
+		padding: 20px 0;
+	}
 	@include bp('med') {
 		margin-left:0;
 	}
@@ -157,6 +174,12 @@ div.grid-item img {
 //When results shows media/content:
 .result {
 	width:7%;
+	@include bp('med') {
+		margin-top: 10px;
+	}
+	@include bp('sml') {
+		width: 12%;
+	}
 	img {
 		max-width: 100%;
 		display: block;
@@ -171,6 +194,9 @@ div.grid-item img {
 
 .userMedia h5 {
 	color: $blackish;
+	@include bp('med') {
+		text-align: center;
+	}
 	// font-size: 4rem;
 }
 h5 span.mediaChoice {
@@ -248,12 +274,14 @@ h5 span.mediaChoice {
 	transition: all 0.3s ease-out;
 	@include bp('med') {
 		display: flex;
+		background: $white;
 	}
 }
 
 .resultMediaContain .imgContain {
 	@include bp('med') {
-	max-width:50%;
+		max-width:50%;
+		background: $white;
 	}
 }
 
@@ -277,7 +305,8 @@ h5 span.mediaChoice {
 		display:flex;
 		position:static;
 		max-width: 50%;
-		background: white;
+		background: $white;
+		opacity: 1;
 	}
 	h4 {
 		color: lighten($deepBlue, 10);
@@ -291,6 +320,9 @@ h5 span.mediaChoice {
 		font-size: 1.4rem;
 		line-height: 1.3;
 		color: $white;
+		@include bp('med'){
+			color: $blackish;
+		}
 		@include bp('sml') {
 			font-size: 1.2rem;
 		}

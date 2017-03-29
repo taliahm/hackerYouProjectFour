@@ -156,15 +156,12 @@ spillApp.showMediaToChoose = function (array) {
 		var headerText = '<h4>Confirm your media selection</h4>';
 		$('.headerText').append(headerText);
 		tvFilter.forEach(function (item) {
-			console.log(item.poster_path);
-			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var noImage = '<img src="/spill/images/noImage.jpg" alt="no movie poster available">';
 			var image = '';
 			if (item.poster_path != null) {
 				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
-				console.log('image exsists');
 			} else {
 				image = noImage;
-				console.log('no image');
 			}
 			var listItem = '<input \n\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\tvalue="' + item[tvTitle] + '" \n\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\tdata-media="tv" \n\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[tvTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
@@ -173,14 +170,12 @@ spillApp.showMediaToChoose = function (array) {
 		});
 
 		movieFilter.forEach(function (item) {
-			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var noImage = '<img src="/spill/images/noImage.jpg" alt="no movie poster available">';
 			var image = '';
 			if (item.poster_path != null) {
 				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
-				console.log('image exsists');
 			} else {
 				image = noImage;
-				console.log('no image');
 			}
 			var listItem = '<input \n\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
@@ -192,14 +187,12 @@ spillApp.showMediaToChoose = function (array) {
 		var _headerText = '<h4>Was this what you were looking for?</h4>';
 		$('.headerText').append(_headerText);
 		tvFilter.forEach(function (item) {
-			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var noImage = '<img src="/spill/images/noImage.jpg" alt="no movie poster available">';
 			var image = '';
 			if (item.poster_path != null) {
 				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
-				console.log('image exsists');
 			} else {
 				image = noImage;
-				console.log('no image');
 			}
 			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[tvTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="tv" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[tvTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
@@ -209,14 +202,12 @@ spillApp.showMediaToChoose = function (array) {
 			$('.chooseTheBooze').show();
 		});
 		movieFilter.forEach(function (item) {
-			var noImage = '<img src="../images/noImage.jpg" alt="no movie poster available">';
+			var noImage = '<img src="/spill/images/noImage.jpg" alt="no movie poster available">';
 			var image = '';
 			if (item.poster_path != null) {
 				image = '<img src="https://image.tmdb.org/t/p/w300/' + item.poster_path + '">';
-				console.log('image exsists');
 			} else {
 				image = noImage;
-				console.log('no image');
 			}
 			var listItem = '\n\t\t\t\t\t\t\t\t<input \n\t\t\t\t\t\t\t\t\t\ttype=radio \n\t\t\t\t\t\t\t\t\t\tid=' + item.id + ' \n\t\t\t\t\t\t\t\t\t\tvalue="' + item[movieTitle] + '" \n\t\t\t\t\t\t\t\t\t\tchecked=true \n\t\t\t\t\t\t\t\t\t\tname="finalOptions" \n\t\t\t\t\t\t\t\t\t\tdata-media="movie" \n\t\t\t\t\t\t\t\t\t\tdata-id=' + item.id + '>\n\t\t\t\t\t\t\t<div class=\'resultItem\'>\n\t\t\t\t\t\t\t\t<label for=' + item.id + '>\n\t\t\t\t\t\t\t\t\t<div class="imageContain">\n\t\t\t\t\t\t\t\t\t\t' + image + '\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<h5>' + item[movieTitle] + '</h5>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>';
 			var elemString = $('<li>').addClass('resultItemContain').html(listItem);
@@ -352,7 +343,7 @@ spillApp.displayComparitiveMedia = function (result) {
 	if (result.poster_path !== null) {
 		imagePath = '' + spillApp.posterURL + result.poster_path;
 	} else {
-		imagePath = '../images/noImage.jpg';
+		imagePath = '/spill/images/noImage.jpg';
 	}
 
 	var rating = result.vote_average;
@@ -532,13 +523,14 @@ spillApp.itemsProcessed = 0;
 
 spillApp.initPackeryGetContent = function () {
 	$('.grid').prepend('<div class="gridSizerTwo">');
+	$('.grid').prepend('<div class="gutterOne">');
 	var grid = $('.grid').packery({
 		itemSelector: '.grid-item',
 		// rowHeight: `${gridSizer}`,
 		// columnWidth: `${gridSizer}`,
 		percentPosition: true,
 		imagesLoaded: true,
-		gutter: 20
+		gutter: '.gutterOne'
 	});
 	grid.imagesLoaded().progress(function () {
 		grid.packery();

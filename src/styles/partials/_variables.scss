@@ -8,7 +8,8 @@ $deepRed: #800006;
 $accentBlue: #068F85;
 $accentGreen: #19BF08;
 $surpriseOrange: #E96A09;
-$deepBlue: #004E48;
+// $deepBlue: #004E48;
+$deepBlue: #068F85;
 
 $cursive: 'Lobster', cursive;
 $rounded: 'Quicksand', sans-serif;
@@ -37,11 +38,8 @@ $bp-smlMed: 540px;
 @mixin netflixText() {
 	color:$netflixRed;
 	text-transform: uppercase;
-	// -webkit-text-stroke: 1px $white;
 	letter-spacing: 5px;
-	 // text-shadow: 3px 3px 0px #9a9898;
 	 font-family: $netflix;
-	 // font-weight: 700;
 }
 
 @mixin bp($size) {
