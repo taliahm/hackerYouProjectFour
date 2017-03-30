@@ -540,7 +540,7 @@ spillApp.showUserChoice = function(choice){
 	// console.log(userMediaPrint);
 	let userChoice = $(`input[value=${choice}][name=chooseBooze]`);
 	let userBooze = $(userChoice).data('image');
-	let elemString = `<h5><span class="mediaChoice">${userMediaPrint}</span> selections for your choice of poisin: </h5>
+	let elemString = `<h5><span class="mediaChoice">${userMediaPrint}</span> selections for your choice of poison: </h5>
 							<div class="result">
 								<img src="images/${userBooze}.png">
 							</div>`;

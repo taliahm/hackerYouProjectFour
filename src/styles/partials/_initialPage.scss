@@ -126,6 +126,7 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
 	margin: 50px 0 20px 0;
 	box-shadow: none;
 	transition: all 0.3s ease-out;
+	border-radius: 0;
 	&:hover {
 		background-color: darken($darkGrey, 10);
 	}

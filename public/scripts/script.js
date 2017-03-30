@@ -453,7 +453,7 @@ spillApp.showUserChoice = function (choice) {
 	// console.log(userMediaPrint);
 	var userChoice = $('input[value=' + choice + '][name=chooseBooze]');
 	var userBooze = $(userChoice).data('image');
-	var elemString = '<h5><span class="mediaChoice">' + userMediaPrint + '</span> selections for your choice of poisin: </h5>\n\t\t\t\t\t\t\t<div class="result">\n\t\t\t\t\t\t\t\t<img src="images/' + userBooze + '.png">\n\t\t\t\t\t\t\t</div>';
+	var elemString = '<h5><span class="mediaChoice">' + userMediaPrint + '</span> selections for your choice of poison: </h5>\n\t\t\t\t\t\t\t<div class="result">\n\t\t\t\t\t\t\t\t<img src="images/' + userBooze + '.png">\n\t\t\t\t\t\t\t</div>';
 	$('.userMedia').append(elemString);
 };
 

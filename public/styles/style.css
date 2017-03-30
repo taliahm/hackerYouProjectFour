@@ -233,7 +233,8 @@ form.getMedia, form.boozeForm, form.boozeFormPartTwo {
   font-size: 1.8rem;
   margin: 50px 0 20px 0;
   box-shadow: none;
-  transition: all 0.3s ease-out; }
+  transition: all 0.3s ease-out;
+  border-radius: 0; }
   #searchMedia:hover {
     background-color: #7a7a7a; }
 
